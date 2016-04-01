@@ -2,6 +2,7 @@
 @border_blue: #50a8d5;
 @UYBG_Font: Orbitron, "serif";
 @background_color: #f5f5f5;
+@arielglyph: '\25C8'; //WHITE DIAMOND CONTAINING BLACK SMALL DIAMOND
 
 // CSS styles for TheGame
 p {
@@ -10,10 +11,25 @@ p {
 }
 
 h1 {
-	.UYBGFont_3em
+	.UYBGFont_3em;
 }
 
+th {
+	.UYBGFont_1em;
+	.UYBGLJustify;
+}
 
+ul {
+	list-style: none;
+	padding: 0px;
+}
+
+ul li:before {
+	content: @arielglyph;
+	margin: 0 0em; /* any design */
+}
+
+// Classes
 .infobox {
 	border-style: solid;
 	border-color: @border_blue;
@@ -92,6 +108,22 @@ h1 {
 	height: 60px;
 	background-color: @background_color;
 	float: right;
+}
+
+// Font
+.UYBGFont_025em {
+	font-family: @UYBG_Font;
+	font-size: 0.25em;
+}
+
+.UYBGFont_050em {
+	font-family: @UYBG_Font;
+	font-size: 0.5em;
+}
+
+.UYBGFont_075em {
+	font-family: @UYBG_Font;
+	font-size: 0.75em;
 }
 
 .UYBGFont_1em {

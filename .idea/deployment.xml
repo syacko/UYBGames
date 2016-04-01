@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="UYBGames" uploadOnCheckin="05b84146-72a1-4678-9ffa-3d9f1642ef70">
+  <component name="PublishConfigData" autoUpload="Always" serverName="UYBGames" uploadOnCheckin="05b84146-72a1-4678-9ffa-3d9f1642ef70" autoUploadExternalChanges="true">
     <serverData>
       <paths name="UYBGames">
         <serverdata>
           <mappings>
             <mapping deploy="/frameworks/UYBGames" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/apache2/htdocs/css_library" local="$PROJECT_DIR$/web/css_library" web="/csslib" />
+            <mapping deploy="/apache2/htdocs/js_library" local="$PROJECT_DIR$/web/js_library" web="/jslib" />
+            <mapping deploy="/apache2/htdocs/img/UYBG_img" local="$PROJECT_DIR$/web/img/UYBG_img" web="/UYBGimglib" />
           </mappings>
         </serverdata>
       </paths>
