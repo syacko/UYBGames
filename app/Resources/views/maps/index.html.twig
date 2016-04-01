@@ -17,11 +17,11 @@
         <tbody>
         {% for map in maps %}
             <tr>
-                <td>{{ map.id }}</td>
-                <td><a href="{{ path('crud_maps_show', { 'id': map.id }) }}">{{ map.mapName }}</a></td>
-                <td>{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
-                <td>{{ map.mapImageUrl }}</td>
-                <td>{{ map.mapTileData }}</td>
+                <td class="UYBGListBorder">{{ map.id }}</td>
+                <td class="UYBGListBorder"><a href="{{ path('crud_maps_show', { 'id': map.id }) }}">{{ map.mapName }}</a></td>
+                <td class="UYBGListBorder">{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
+                <td class="UYBGListBorder">{{ map.mapImageUrl }}</td>
+                <td class="UYBGListBorder">{{ map.mapTileData }}</td>
                 <td>
                     <ul>
                         <li>
