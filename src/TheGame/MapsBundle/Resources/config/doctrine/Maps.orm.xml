@@ -15,7 +15,7 @@
     </field>
     <field name="mapPlayable" type="boolean" column="map_playable" nullable="true">
       <options>
-        <option name="default"/>
+        <option name="default">false</option>
       </options>
     </field>
     <field name="mapImageUrl" type="string" column="map_image_url" length="250" nullable="true">
