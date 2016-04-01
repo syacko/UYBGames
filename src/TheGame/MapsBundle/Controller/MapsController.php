@@ -19,7 +19,7 @@ class MapsController extends Controller
     /**
      * Lists all Maps entities.
      *
-     * @Route("/", name="maps_index")
+     * @Route("/", name="crud_maps_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -38,7 +38,7 @@ class MapsController extends Controller
     /**
      * Creates a new Maps entity.
      *
-     * @Route("/new", name="maps_new")
+     * @Route("/new", name="crud_maps_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -52,7 +52,7 @@ class MapsController extends Controller
             $em->persist($map);
             $em->flush();
 
-            return $this->redirectToRoute('maps_show', array('id' => $map->getId()));
+            return $this->redirectToRoute('crud_maps_show', array('id' => $map->getId()));
         }
 
         return $this->render('maps/new.html.twig', array(
@@ -66,7 +66,7 @@ class MapsController extends Controller
     /**
      * Finds and displays a Maps entity.
      *
-     * @Route("/{id}", name="maps_show")
+     * @Route("/{id}", name="crud_maps_show")
      * @Method("GET")
      */
     public function showAction(Maps $map)
@@ -84,7 +84,7 @@ class MapsController extends Controller
     /**
      * Displays a form to edit an existing Maps entity.
      *
-     * @Route("/{id}/edit", name="maps_edit")
+     * @Route("/{id}/edit", name="crud_maps_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Maps $map)
@@ -98,7 +98,7 @@ class MapsController extends Controller
             $em->persist($map);
             $em->flush();
 
-            return $this->redirectToRoute('maps_edit', array('id' => $map->getId()));
+            return $this->redirectToRoute('crud_maps_edit', array('id' => $map->getId()));
         }
 
         return $this->render('maps/edit.html.twig', array(
@@ -113,7 +113,7 @@ class MapsController extends Controller
     /**
      * Deletes a Maps entity.
      *
-     * @Route("/{id}", name="maps_delete")
+     * @Route("/{id}", name="crud_maps_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Maps $map)
@@ -127,7 +127,7 @@ class MapsController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('maps_index');
+        return $this->redirectToRoute('crud_maps_index');
     }
 
     /**
@@ -140,7 +140,7 @@ class MapsController extends Controller
     private function createDeleteForm(Maps $map)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('maps_delete', array('id' => $map->getId())))
+            ->setAction($this->generateUrl('crud_maps_delete', array('id' => $map->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
