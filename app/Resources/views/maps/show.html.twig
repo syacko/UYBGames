@@ -3,42 +3,48 @@
 {% block body %}
     <h1>Maps</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Mapname</th>
-                <td>{{ map.mapName }}</td>
-            </tr>
-            <tr>
-                <th>Mapplayable</th>
-                <td>{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Mapimageurl</th>
-                <td>{{ map.mapImageUrl }}</td>
-            </tr>
-            <tr>
-                <th>Maptiledata</th>
-                <td>{{ map.mapTileData }}</td>
-            </tr>
+    <div style="width: 50%;">
+        <table>
+            <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ map.id }}</td>
+                <td class="UYBGListBorder UYBGFont_075em">{{ map.id }}</td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+                <th>Name</th>
+                <td class="UYBGListBorder UYBGFont_075em">{{ map.mapName }}</td>
+            </tr>
+            <tr>
+                <th>Playable</th>
+                <td class="UYBGListBorder UYBGFont_075em">{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th nowrap>Image URL</th>
+                <td class="UYBGListBorder UYBGFont_075em" style="word-wrap: break-word;">{{ map.mapImageUrl }}</td>
+            </tr>
+            <tr>
+                <th nowrap>Tile Data</th>
+                <td class="UYBGListBorder UYBGFont_075em" style="word-wrap: break-word;">{{ map.mapTileData }}</td>
+            </tr>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('crud_maps_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('crud_maps_edit', { 'id': map.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <div style="display: inline-block; white-space: nowrap; margin-top: 5px; width: 100%;">
+            <div style="display: inherit;">
+                <ul>
+                    <li>
+                        <a href="{{ path('crud_maps_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('crud_maps_edit', { 'id': map.id }) }}">Edit</a>
+                    </li>
+                </ul>
+            </div>
+            <div align="right" style="display: inline-block; margin-left: 50px; vertical-align: top;">
+                {{ form_start(delete_form) }}
+                <input class=btn type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}
