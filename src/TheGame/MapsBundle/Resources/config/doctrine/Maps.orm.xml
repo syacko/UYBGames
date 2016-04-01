@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="TheGame\MapsBundle\Entity\Maps" table="maps">
+    <unique-constraints>
+      <unique-constraint name="maps_maps_name_uc" columns="map_name"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+      <sequence-generator sequence-name="maps_id_seq" allocation-size="1" initial-value="1"/>
+    </id>
+    <field name="mapName" type="string" column="map_name" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="mapPlayable" type="boolean" column="map_playable" nullable="true">
+      <options>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="mapImageUrl" type="string" column="map_image_url" length="250" nullable="true">
+      <options>
+        <option name="fixed"/>
+        <option name="default">MISSING</option>
+      </options>
+    </field>
+    <field name="mapTileData" type="text" column="map_tile_data" nullable="true">
+      <options>
+        <option name="fixed"/>
+        <option name="comment">This is a JSON field.</option>
+        <option name="default">MISSING</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>
