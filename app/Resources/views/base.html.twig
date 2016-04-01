@@ -3,9 +3,13 @@
     <head>
         <meta charset="UTF-8"/>
         <title>{% block title %}{% endblock %} The Game by UYBGames</title>
+        {# Start of Javascript libraries#}
         <link rel="stylesheet" type='text/css' href="{{ jsLibrary }}/jquery-ui-1.11.4.custom/jquery-ui.css"/>
+        <script src="{{ jsLibrary }}/less.js" type="text/javascript"></script>
+        {# Start of CSS libraries#}
         <link rel="stylesheet" type='text/css' href="{{ cssLibrary }}/thegame.css"/>
         <link rel="stylesheet" type='text/css' href="{{ cssLibrary }}/thegame_fonts.css"/>
+        <link rel="stylesheet/less" type="text/css" href="{{ cssLibrary }}/styles.less" />
         <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Orbitron:400,700|Duru+Sans'/>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
