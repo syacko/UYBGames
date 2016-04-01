@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Maps list</h1>
+    <h1>Maps List</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Mapname</th>
-                <th>Mapplayable</th>
-                <th>Mapimageurl</th>
-                <th>Maptiledata</th>
                 <th>Id</th>
+                <th>Name</th>
+                <th>Playable</th>
+                <th>Image URL</th>
+                <th>Tile JSON</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for map in maps %}
             <tr>
+                <td>{{ map.id }}</td>
                 <td><a href="{{ path('crud_maps_show', { 'id': map.id }) }}">{{ map.mapName }}</a></td>
                 <td>{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
                 <td>{{ map.mapImageUrl }}</td>
                 <td>{{ map.mapTileData }}</td>
-                <td>{{ map.id }}</td>
                 <td>
                     <ul>
                         <li>
