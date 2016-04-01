@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Maps list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mapname</th>
+                <th>Mapplayable</th>
+                <th>Mapimageurl</th>
+                <th>Maptiledata</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for map in maps %}
+            <tr>
+                <td><a href="{{ path('crud_maps_show', { 'id': map.id }) }}">{{ map.mapName }}</a></td>
+                <td>{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
+                <td>{{ map.mapImageUrl }}</td>
+                <td>{{ map.mapTileData }}</td>
+                <td>{{ map.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('crud_maps_show', { 'id': map.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('crud_maps_edit', { 'id': map.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('crud_maps_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Maps</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Mapname</th>
+                <td>{{ map.mapName }}</td>
+            </tr>
+            <tr>
+                <th>Mapplayable</th>
+                <td>{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Mapimageurl</th>
+                <td>{{ map.mapImageUrl }}</td>
+            </tr>
+            <tr>
+                <th>Maptiledata</th>
+                <td>{{ map.mapTileData }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ map.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('crud_maps_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('crud_maps_edit', { 'id': map.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
