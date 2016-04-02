@@ -1,12 +1,17 @@
 //Constant variables for TheGame
-@border_blue: #50a8d5;
-@UYBG_Font: Orbitron, "serif";
-@background_color: #f5f5f5;
 @arielglyph: '\25C8'; //WHITE DIAMOND CONTAINING BLACK SMALL DIAMOND
+@background_color: #f5f5f5;
+@border_blue: #50a8d5;
+@btnBorder: solid #1f628d 5px;
+@btnBackground: #3498db;
+@btnHoverBackground: #3cb0fd;
+@fontWhite: white;
+@fontBlack: black;
+@UYBG_Font: Orbitron, "serif";
 
 // CSS styles for TheGame
 p {
-	color: black;
+	color: @fontBlack;
 	font-family: @UYBG_Font;
 }
 
@@ -22,6 +27,9 @@ th {
 ul {
 	list-style: none;
 	padding: 0px;
+	display: block;
+	margin: 0px 0px 0px 0px;
+	padding-left: 10px;
 }
 
 ul li:before {
@@ -30,6 +38,42 @@ ul li:before {
 }
 
 // Classes
+.appPanel {
+	border-style: solid;
+	border-color: @border_blue;
+	border-radius: 10px;
+	width: 200px;
+	height: 100px;
+}
+
+.btn {
+	background: @btnBackground;
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	-webkit-border-radius: 14;
+	-moz-border-radius: 14;
+	border-radius: 14px;
+	font-family: Arial;
+	color: @fontWhite;
+	font-size: 14px;
+	padding: 5px 10px 5px 10px;
+	border: @btnBorder;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: @btnHoverBackground;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+}
+
 .infobox {
 	border-style: solid;
 	border-color: @border_blue;
@@ -38,14 +82,6 @@ ul li:before {
 	height: 55px;
 	width: 116px;
 	vertical-align: top;
-}
-
-.appPanel {
-	border-style: solid;
-	border-color: @border_blue;
-	border-radius: 10px;
-	width: 200px;
-	height: 100px;
 }
 
 .Table {
