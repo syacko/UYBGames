@@ -23,7 +23,7 @@
                 <td class="UYBGListBorder UYBGFont_075em" style="width: 15%; word-wrap: break-word;">{{ map.mapImageUrl }}</td>
                 <td class="UYBGListBorder UYBGFont_075em" style="word-wrap: break-word;">{{ map.mapTileData }}</td>
                 <td style="align-content: center;">
-                    <ul>
+                    <ul style="margin-top: 5px;">
                         <li>
                             <a class="UYBGFont_075em" href="{{ path('crud_maps_show', { 'id': map.id }) }}">show</a>
                         </li>
@@ -37,7 +37,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul style="margin-top: 5px;">
         <li>
             <a href="{{ path('crud_maps_new') }}">Create a new entry</a>
         </li>
