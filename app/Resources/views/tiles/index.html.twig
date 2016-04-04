@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tiles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mapid</th>
+                <th>Tilecolrow</th>
+                <th>Tilesectorname</th>
+                <th>Tileplayable</th>
+                <th>Tiledata</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tile in tiles %}
+            <tr>
+                <td><a href="{{ path('crud_tiles_show', { 'id': tile.id }) }}">{{ tile.mapId }}</a></td>
+                <td>{{ tile.tileColRow }}</td>
+                <td>{{ tile.tileSectorName }}</td>
+                <td>{% if tile.tilePlayable %}Yes{% else %}No{% endif %}</td>
+                <td>{{ tile.tileData }}</td>
+                <td>{{ tile.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('crud_tiles_show', { 'id': tile.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('crud_tiles_edit', { 'id': tile.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('crud_tiles_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

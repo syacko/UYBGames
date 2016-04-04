@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tiles</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Mapid</th>
+                <td>{{ tile.mapId }}</td>
+            </tr>
+            <tr>
+                <th>Tilecolrow</th>
+                <td>{{ tile.tileColRow }}</td>
+            </tr>
+            <tr>
+                <th>Tilesectorname</th>
+                <td>{{ tile.tileSectorName }}</td>
+            </tr>
+            <tr>
+                <th>Tileplayable</th>
+                <td>{% if tile.tilePlayable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Tiledata</th>
+                <td>{{ tile.tileData }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ tile.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('crud_tiles_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('crud_tiles_edit', { 'id': tile.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
