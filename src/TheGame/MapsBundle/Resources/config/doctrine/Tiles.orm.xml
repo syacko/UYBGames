@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="TheGame\MapsBundle\Entity\Tiles" table="tiles">
+    <unique-constraints>
+      <unique-constraint name="tiles_col_row_uc" columns="map_id,tile_col_row"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+      <sequence-generator sequence-name="tiles_id_seq" allocation-size="1" initial-value="1"/>
+    </id>
+    <field name="mapId" type="bigint" column="map_id" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="tileColRow" type="string" column="tile_col_row" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+        <option name="comment">This field is in JSON format. An example is {"col": 0,"row": 0}</option>
+      </options>
+    </field>
+    <field name="tileSectorName" type="string" column="tile_sector_name" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="tilePlayable" type="boolean" column="tile_playable" nullable="true">
+      <options>
+        <option name="default"/>
+      </options>
+    </field>
+    <field name="tileData" type="text" column="tile_data" nullable="true">
+      <options>
+        <option name="fixed"/>
+        <option name="comment">This is in JSON format.</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>
