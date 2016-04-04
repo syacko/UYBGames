@@ -1,21 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tiles edit</h1>
+    <h1>Tiles Edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('crud_tiles_index') }}">Back to the list</a>
-        </li>
-        <li>
+    {{ form_widget(edit_form) }}
+    <div style="display: inline-block; white-space: nowrap; margin-top: 5px; width: 100%;">
+        <div style="display: inherit;">
+            <ul>
+                <li>
+                    <a href="{{ path('crud_tiles_index') }}">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+        <div align="right" style="display: inline-block; margin-left: 50px; vertical-align: top;">
+            <input class="btn" type="submit" value="Edit"/>
+        </div>
+        <div align="right" style="display: inline-block; margin-left: 50px; vertical-align: top;">
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+    </div>
+    {{ form_end(edit_form) }}
 {% endblock %}

@@ -3,46 +3,52 @@
 {% block body %}
     <h1>Tiles</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Mapid</th>
-                <td>{{ tile.mapId }}</td>
-            </tr>
-            <tr>
-                <th>Tilecolrow</th>
-                <td>{{ tile.tileColRow }}</td>
-            </tr>
-            <tr>
-                <th>Tilesectorname</th>
-                <td>{{ tile.tileSectorName }}</td>
-            </tr>
-            <tr>
-                <th>Tileplayable</th>
-                <td>{% if tile.tilePlayable %}Yes{% else %}No{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Tiledata</th>
-                <td>{{ tile.tileData }}</td>
-            </tr>
+    <div style="width: 50%;">
+        <table>
+            <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ tile.id }}</td>
+                <td class="UYBGListBorder UYBGFont_075em">{{ tile.id }}</td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+                <th>Map Id</th>
+                <td class="UYBGListBorder UYBGFont_075em">{{ tile.mapId }}</td>
+            </tr>
+            <tr>
+                <th>Column and Row</th>
+                <td class="UYBGListBorder UYBGFont_075em">{{ tile.tileColRow }}</td>
+            </tr>
+            <tr>
+                <th>Secto Nname</th>
+                <td class="UYBGListBorder UYBGFont_075em">{{ tile.tileSectorName }}</td>
+            </tr>
+            <tr>
+                <th>Playable</th>
+                <td class="UYBGListBorder UYBGFont_075em">{% if tile.tilePlayable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Tile JSON</th>
+                <td class="UYBGListBorder UYBGFont_075em" style="word-wrap: break-word;">{{ tile.tileData }}</td>
+            </tr>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('crud_tiles_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('crud_tiles_edit', { 'id': tile.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <div style="display: inline-block; white-space: nowrap; margin-top: 5px; width: 100%;">
+            <div style="display: inherit;">
+                <ul>
+                    <li>
+                        <a href="{{ path('crud_tiles_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('crud_tiles_edit', { 'id': tile.id }) }}">Edit</a>
+                    </li>
+                </ul>
+            </div>
+            <div align="right" style="display: inline-block; margin-left: 50px; vertical-align: top;">
+                {{ form_start(delete_form) }}
+                <input class="btn" type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -5,22 +5,24 @@
 
     <table>
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Playable</th>
-                <th>Image URL</th>
-                <th>Tile JSON</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Playable</th>
+            <th>Image URL</th>
+            <th>Tile JSON</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for map in maps %}
             <tr>
                 <td class="UYBGListBorder UYBGFont_075em" nowrap>{{ map.id }}</td>
-                <td class="UYBGListBorder UYBGFont_075em" nowrap><a href="{{ path('crud_maps_show', { 'id': map.id }) }}">{{ map.mapName }}</a></td>
+                <td class="UYBGListBorder UYBGFont_075em" nowrap><a
+                            href="{{ path('crud_maps_show', { 'id': map.id }) }}">{{ map.mapName }}</a></td>
                 <td class="UYBGListBorder UYBGFont_075em" nowrap>{% if map.mapPlayable %}Yes{% else %}No{% endif %}</td>
-                <td class="UYBGListBorder UYBGFont_075em" style="width: 15%; word-wrap: break-word;">{{ map.mapImageUrl }}</td>
+                <td class="UYBGListBorder UYBGFont_075em"
+                    style="width: 15%; word-wrap: break-word;">{{ map.mapImageUrl }}</td>
                 <td class="UYBGListBorder UYBGFont_075em" style="word-wrap: break-word;">{{ map.mapTileData }}</td>
                 <td style="align-content: center;">
                     <ul style="margin-top: 5px;">
