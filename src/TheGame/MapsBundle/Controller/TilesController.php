@@ -30,6 +30,8 @@ class TilesController extends Controller
 
         return $this->render('tiles/index.html.twig', array(
             'tiles' => $tiles,
+            'jsLibrary' => $this->getParameter('js_library'),
+            'cssLibrary' => $this->getParameter('css_library'),
         ));
     }
 
@@ -55,6 +57,8 @@ class TilesController extends Controller
 
         return $this->render('tiles/new.html.twig', array(
             'tile' => $tile,
+            'jsLibrary' => $this->getParameter('js_library'),
+            'cssLibrary' => $this->getParameter('css_library'),
             'form' => $form->createView(),
         ));
     }
@@ -71,6 +75,8 @@ class TilesController extends Controller
 
         return $this->render('tiles/show.html.twig', array(
             'tile' => $tile,
+            'jsLibrary' => $this->getParameter('js_library'),
+            'cssLibrary' => $this->getParameter('css_library'),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -97,6 +103,8 @@ class TilesController extends Controller
 
         return $this->render('tiles/edit.html.twig', array(
             'tile' => $tile,
+            'jsLibrary' => $this->getParameter('js_library'),
+            'cssLibrary' => $this->getParameter('css_library'),
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
