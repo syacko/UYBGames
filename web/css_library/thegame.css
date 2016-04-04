@@ -10,6 +10,7 @@ th {
   font-family: Orbitron, "serif";
   font-size: 1em;
   text-align: left;
+  white-space: nowrap;
 }
 ul {
   list-style: none;
