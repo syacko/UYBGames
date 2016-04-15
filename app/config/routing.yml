@@ -1,3 +1,8 @@
+the_game_setup:
+    resource: "@TheGameSetupBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 the_game_maps:
     resource: "@TheGameMapsBundle/Controller/"
     type:     annotation
