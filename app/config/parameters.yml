@@ -10,6 +10,3 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 345e814e396a1155acb93594e7ce94174b2a08be
-    js_library: http://192.168.41.60/js_library
-    css_library: http://192.168.41.60/css_library
-    img_library: http://192.168.41.60/img/UYBG_img
