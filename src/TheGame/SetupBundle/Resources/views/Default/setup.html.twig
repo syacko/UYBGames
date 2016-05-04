@@ -62,7 +62,7 @@
 
                 //Load Image into MiniMap
                 miniMapSVG.append("image")
-                        .attr("xlink:href", "{{ imgLocal }}/MapMaster-001.jpg")
+                        .attr("xlink:href", "{{ imgLibrary }}/MapMaster-001.jpg")
                         .attr("x", borderWidth / 2)
                         .attr("y", borderWidth / 2)
                         .attr("width", miniWidth)
@@ -107,7 +107,7 @@
                             var mainMapSVG = this.buildMainSVGBorder();
 
                             //Load Image into mainMap
-                            this.buildMainImage(mainMapSVG, "{{ imgLocal }}/DisplaySnow-blue.gif");
+                            this.buildMainImage(mainMapSVG, "{{ imgLibrary }}/DisplaySnow-blue.gif");
 
                             //Load text on display snow
                             mainMapSVG.append("text").text("Click on a the mini map to zoom in on a sector.")
@@ -133,7 +133,7 @@
                             var mainMapSVG = this.buildMainSVGBorder();
 
                             //Load Image into mainMap
-                            this.buildMainImage(mainMapSVG, "{{ imgLocal }}/MapsMaster-001-" + xy[1] + "-" + xy[2] + ".jpg");
+                            this.buildMainImage(mainMapSVG, "{{ imgLibrary }}/MapsMaster-001-" + xy[1] + "-" + xy[2] + ".jpg");
 
                             //Build Main Map Grid
                             this.buildMainGrid(mainMapSVG);
