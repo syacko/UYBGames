@@ -3,7 +3,6 @@
 {% block title %}Game Setup - {% endblock %}
 
 {% block body %}
-    <style type="text/css"> @import url("{{ cssLibrary }}/thegame_setup.css"); </style>
     {% spaceless %}
         {# Page Title #}
         <div style="width: 100%; font-family: Orbitron; font-size: 1em; font-weight: bold; text-align: center;">
@@ -17,16 +16,18 @@
                 <div id="miniMap"></div>
                 <div id="minimapdisplay">
                     <div class="infobox">
-                        <p style="font-size: .75em;text-align: center;">Mar's Land Grant</p>
-                        <p style="font-size: .75em;text-align: center;">001</p>
+                        <p class="UYBGFont_075em_AlignCenter">Mar's Land Grant</p>
+                        <p class="UYBGFont_075em_AlignCenter">001</p>
                     </div>
                     <div class="infobox">
-                        <p style="font-size: .75em;text-align: center;">Sector Selected</p>
-                        <p id="selectedSector" style="font-size: .75em;text-align: center"></p>
+                        <p class="UYBGFont_075em_AlignCenter">Sector Selected</p>
+                        <p id="selectedSector" class="UYBGFont_075em_AlignCenter"></p>
                     </div>
                     <div class="infobox"></div>
                 </div>
-                <div id="minimapinstruction"></div>
+                <div id="minimapinstruction" class="divborder">
+                    <p class="UYBGFont_075em" style="margin: 2px 4px 2px 4px;">Instructions go here</p>
+                </div>
             </div>
             {# Main Map Section #}
             <div id="mainmapsection">
@@ -34,19 +35,27 @@
             </div>
         </div>
         {# Map Configuration Area #}
-        <div id="tileconfig">
-            <div style="display: inline-block; border-style: solid; border-color: grey; width: 25%; vertical-align: top;">
-                <div style="display: inline-block; border-style: solid; border-color: black; white-space: nowrap;">
-                    <div style="height: 100px; width: 200px; border-style: solid; border-color: green"></div>
-                    <div style="height: 50px; border-style: solid; border-color: green"></div>
-                    <div style="height: 50px; border-style: solid; border-color: green"></div>
-                    <div style="height: 50px; border-style: solid; border-color: green"></div>
-                    <div style="height: 50px; border-style: solid; border-color: green"></div>
-                    <div style="height: 50px; border-style: solid; border-color: green"></div>
-                    <div style="height: 50px; border-style: solid; border-color: green"></div>
-                    <div style="height: 50px; border-style: solid; border-color: green"></div>
-                </div>
+        <div id="toolbarsection" class="divborder">
+            <div style="width: 150px;">
+                <p class="UYBGFont_075em" style="margin: .5em 0em .5em 1em;">Quick Links</p>
+                <ul>
+                    <li style="margin: 5px 0px 0px 0px;">
+                        <a class="UYBGFont_075em" style="margin-left: .25em" href="{{ path('crud_maps_index') }}">List
+                            of Maps</a>
+                    </li>
+                    <li style="margin: 5px 0px 0px 0px;">
+                        <a class="UYBGFont_075em" style="margin-left: .25em" href="{{ path('crud_tiles_index') }}">List
+                            of Tiles</a>
+                    </li>
+                </ul>
             </div>
+            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
+            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
+            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
+            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
+            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
+            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
+            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
         </div>
 
         {#The following line includes the Javascript D3 base library#}
