@@ -14,7 +14,7 @@ class DefaultController extends Controller
     {
 //        return $this->render('GameSetupBundle:Default:index.html.twig'); DO NOT USE
 
-        return $this->render('setup.html.twig',
+        return $this->render('TheGameSetupBundle:Default:setup.html.twig',
             array('jsLibrary' => $this->getParameter('js_library'),
                 'cssLibrary' => $this->getParameter('css_library'),
                 'imgLibrary' => $this->getParameter('img_library'),
