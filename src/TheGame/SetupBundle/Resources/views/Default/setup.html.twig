@@ -3,6 +3,18 @@
 {% block title %}Game Setup - {% endblock %}
 
 {% block body %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#landGrant").selectmenu({
+                change: function (event, ui) {
+                    alert('x');
+                }
+            });
+        });
+    </script>
+
     {% spaceless %}
         {# Page Title #}
         <div style="width: 100%; font-family: Orbitron; font-size: 1em; font-weight: bold; text-align: center;">
@@ -16,14 +28,17 @@
                 <div id="miniMap"></div>
                 <div id="minimapdisplay">
                     <div class="infobox">
-                        <p class="UYBGFont_075em_AlignCenter">Mar's Land Grant</p>
-                        <p class="UYBGFont_075em_AlignCenter">001</p>
+                        <p class="UYBGFont_075em_AlignCenter" style="margin-bottom: 2px;">Mar's Land Grant</p>
+                        <select name="landGrant" id="landGrant" class="UYBGFont_1em" style="margin-left: 8px;">
+                            {% for mapName in mapNameList %}
+                                <option>{{ mapName }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                     <div class="infobox">
                         <p class="UYBGFont_075em_AlignCenter">Sector Selected</p>
                         <p id="selectedSector" class="UYBGFont_075em_AlignCenter"></p>
                     </div>
-                    <div class="infobox"></div>
                 </div>
                 <div id="minimapinstruction" class="divborder">
                     <p class="UYBGFont_075em" style="margin: 2px 4px 2px 4px;">Instructions go here</p>
@@ -57,10 +72,6 @@
             {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
             {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
         </div>
-
-        {#The following line includes the Javascript D3 base library#}
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.min.js"></script>
-        {#<script type="text/javascript" src="{{ jsLibrary }}/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>#}
 
         <script>
 

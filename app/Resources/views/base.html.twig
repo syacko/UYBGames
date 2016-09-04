@@ -4,12 +4,14 @@
         <meta charset="UTF-8"/>
         <title>{% block title %}{% endblock %} The Game by UYBGames</title>
         {# Start of Javascript libraries#}
-        <link rel="stylesheet" type='text/css' href="{{ jsLibrary }}/jquery-ui-1.11.4.custom/jquery-ui.css"/>
+        <link rel="stylesheet" type='text/css' href="{{ jsLibrary }}/jquery-ui-custom/jquery-ui.css">
         {# Start of CSS libraries#}
         <link rel="stylesheet" type='text/css' href="{{ cssLibrary }}/thegame.css"/>
         <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Orbitron:400,700|Duru+Sans'/>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.min.js"></script>
     </head>
     <body>
         {% block body %}{% endblock %}
