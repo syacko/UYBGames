@@ -19,8 +19,17 @@ ul {
   margin: 0px 0px 0px 0px;
   padding-left: 10px;
 }
-ul li:before {
+
+li:before {
   content: '\25C8';
+}
+
+li.ui-menu-item:before {
+    content: none;
+}
+
+.removeIcon:before {
+    content: none;
 }
 .appPanel {
   border-style: solid;
@@ -73,10 +82,11 @@ ul li:before {
   border-color: #50a8d5;
   border-radius: 5px;
     float: left;
-    margin: 5px 0px 1px 5px;
-  height: 55px;
-    width: 46%;
+    margin: 5px 0px 1px 0px;
+    height: 30px;
+    width: 95%;
   vertical-align: top;
+    padding: 2px 2px 2px 2px;
 }
 .Table {
   position: relative;
@@ -192,12 +202,12 @@ ul li:before {
 #minimapdisplay {
     float: left;
     width: 385px;
-    height: 72px;
+    height: 95px;
 }
 #minimapinstruction {
     float: left;
     width: 377px;
-    height: 245px;
+    height: 220px;
     border-color: #50a8d5;
     border-radius: 5px;
     border-style: solid;
