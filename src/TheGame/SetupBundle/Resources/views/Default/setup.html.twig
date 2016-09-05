@@ -12,7 +12,9 @@
                     alert('x');
                 }
             });
+            $("#landGrant").selectmenu("option", "width", 230);
         });
+
     </script>
 
     {% spaceless %}
@@ -28,16 +30,15 @@
                 <div id="miniMap"></div>
                 <div id="minimapdisplay">
                     <div class="infobox">
-                        <p class="UYBGFont_075em_AlignCenter" style="margin-bottom: 2px;">Mar's Land Grant</p>
-                        <select name="landGrant" id="landGrant" class="UYBGFont_1em" style="margin-left: 8px;">
+                        <label for="landGrant" class="UYBGFont_075em">Mar's Land Grant: </label>
+                        <select name="landGrant" id="landGrant" class="UYBGFont_075em">
                             {% for mapName in mapNameList %}
-                                <option>{{ mapName }}</option>
+                                <option class="removeIcon">{{ mapName }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="infobox">
-                        <p class="UYBGFont_075em_AlignCenter">Sector Selected</p>
-                        <p id="selectedSector" class="UYBGFont_075em_AlignCenter"></p>
+                        <p id="selectedSector" class="UYBGFont_075em">Sector Selected: </p>
                     </div>
                 </div>
                 <div id="minimapinstruction" class="divborder">
@@ -163,7 +164,7 @@
                             var xy = rectID.split("/");
 
                             var mySelectedSector = document.getElementById("selectedSector");
-                            mySelectedSector.innerText = "Col: " + xy[1] + " / Row: " + xy[2];
+                            mySelectedSector.innerText = "Sector Selected: Col: " + xy[1] + " / Row: " + xy[2];
 
                             //Replace HTML Div Main Map
                             d3.select("div#mainMap").remove();
