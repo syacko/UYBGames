@@ -12,6 +12,12 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('TheGameMapsBundle:Default:index.html.twig');
+//        return $this->render('TheGameMapsBundle:Default:index.html.twig'); DO NOT USE
+
+        return $this->render('TheGameMapsBundle:Default:index.html.twig',
+            array('jsLibrary' => $this->getParameter('js_library'),
+                'cssLibrary' => $this->getParameter('css_library'),
+                'imgLibrary' => $this->getParameter('img_library'),
+            ));
     }
 }
