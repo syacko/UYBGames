@@ -22,21 +22,16 @@ class DefaultController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
-            'SELECT m.mapName FROM TheGameMapsBundle:Maps m ORDER BY m.mapName ASC'
+            'SELECT m.mapName, m.mapImageUrl FROM TheGameMapsBundle:Maps m ORDER BY m.mapName ASC'
         );
         $mapNameResults = $query->getResult();
-
-        $mapNameList = array();
-        foreach ($mapNameResults as $mapRow) {
-            $mapNameList[$mapRow["mapName"]] = $mapRow["mapName"];
-        }
 
         //        return $this->render('GameSetupBundle:Default:index.html.twig'); DO NOT USE
         return $this->render('TheGameSetupBundle:Default:setup.html.twig',
             array('jsLibrary' => $this->getParameter('js_library'),
                 'cssLibrary' => $this->getParameter('css_library'),
                 'imgLibrary' => $this->getParameter('img_library'),
-                'mapNameList' => $mapNameList,
+                'mapNameResults' => $mapNameResults,
             ));
     }
 }

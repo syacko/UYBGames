@@ -9,7 +9,8 @@
         $(function () {
             $("#landGrant").selectmenu({
                 change: function (event, ui) {
-                    alert('x');
+                    var mapName = $("#landGrant").val();
+                    myMiniMap.performAction("main", mapName);
                 }
             });
             $("#landGrant").selectmenu("option", "width", 230);
@@ -27,13 +28,16 @@
         <div id="maparea">
             {# Mini Map Section #}
             <div id="minimapsection">
-                <div id="miniMap"></div>
+                <div id="minimapsubsection">
+                    <div id="miniMap"></div>
+                </div>
                 <div id="minimapdisplay">
                     <div class="infobox">
                         <label for="landGrant" class="UYBGFont_075em">Mar's Land Grant: </label>
                         <select name="landGrant" id="landGrant" class="UYBGFont_075em">
-                            {% for mapName in mapNameList %}
-                                <option class="removeIcon">{{ mapName }}</option>
+                            {% for mapRow in mapNameResults %}
+                                <option class="removeIcon"
+                                        value="{{ mapRow["mapImageUrl"] }}">{{ mapRow["mapName"] }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -78,41 +82,87 @@
 
             var miniWidth = 375, miniHeight = 175, borderWidth = 10, displayBorderColor = "#50a8d5", gridWidth = 25;
             var myMiniMap = new MiniMap();
-            myMiniMap.buildMiniMapGrid(miniWidth / gridWidth, miniHeight / gridWidth);
+            myMiniMap.performAction("init", "/MapsMaster-001.jpg");
             //
             var myMainMap = new MainMap();
             myMainMap.performAction("init");
 
             function MiniMap() {
 
-                //Create miniMapSVG
-                var miniMapSVG = d3.select("div#miniMap").append("svg")
-                        .attr("width", miniWidth + borderWidth)
-                        .attr("height", miniHeight + borderWidth);
+                if (arguments.callee._singletonInstance) {
+                    return arguments.callee._singletonInstance;
+                }
 
+                arguments.callee._singletonInstance = this;
 
-                //Create MiniMapBorder
-                miniMapSVG.append("rect")
-                        .attr("x", "0")
-                        .attr("y", "0")
-                        .attr("rx", 15)
-                        .attr("ry", 15)
+                this.performAction = function (action, mapName) {
+
+                    switch (action) {
+                        case "init":
+                            //Create miniMapSVG and border
+                            var miniMapSVG = this.buildMiniSVGBorder();
+
+                            //Load Image into miniMap
+                            this.buildMiniImage(miniMapSVG, "{{ imgLibrary }}" + mapName);
+
+                            this.buildMiniMapGrid(miniMapSVG, miniWidth / gridWidth, miniHeight / gridWidth, mapName);
+
+                            break;
+                        case "main":
+                            myMainMap.performAction("reset");
+
+                            //Replace HTML Div Mini Map
+                            d3.select("div#miniMap").remove();
+                            var div = document.createElement("div");
+                            div.id = "miniMap";
+                            div.style = "display: inline; white-space: nowrap;";
+                            document.getElementById("minimapsubsection").appendChild(div);
+
+                            //Create miniMapSVG and border
+                            var miniMapSVG = this.buildMiniSVGBorder();
+
+                            //Load Image into mainMap
+                            this.buildMiniImage(miniMapSVG, "{{ imgLibrary }}" + mapName);
+
+                            this.buildMiniMapGrid(miniMapSVG, miniWidth / gridWidth, miniHeight / gridWidth, mapName);
+                            break;
+                        default:
+                            alert("MiniMap has been called with invalid action. [" + action + "]")
+                    }
+                };
+
+                this.buildMiniSVGBorder = function () {
+                    //Create miniMapSVG
+                    var miniMapSVG = d3.select("div#miniMap").append("svg")
                         .attr("width", miniWidth + borderWidth)
                         .attr("height", miniHeight + borderWidth)
-                        .attr("fill", "white")
-                        .attr("stroke", displayBorderColor)
-                        .attr("stroke-width", borderWidth);
+                            .attr("id", "miniMapSVG");
+                    //Create MiniMapBorder
+                    miniMapSVG.append("rect")
+                            .attr("x", "0")
+                            .attr("y", "0")
+                            .attr("rx", 15)
+                            .attr("ry", 15)
+                            .attr("width", miniWidth + borderWidth)
+                            .attr("height", miniHeight + borderWidth)
+                            .attr("fill", "white")
+                            .attr("stroke", displayBorderColor)
+                            .attr("stroke-width", borderWidth);
+                    return miniMapSVG;
+                }
 
-                //Load Image into MiniMap
-                miniMapSVG.append("image")
-                        .attr("xlink:href", "{{ imgLibrary }}/MapMaster-001.jpg")
-                        .attr("x", borderWidth / 2)
-                        .attr("y", borderWidth / 2)
-                        .attr("width", miniWidth)
-                        .attr("height", miniHeight);
+                this.buildMiniImage = function (miniMapSVG, fullMapName) {
+                    //Load Image into MiniMap
+                    miniMapSVG.append("image")
+                            .attr("xlink:href", fullMapName)
+                            .attr("x", borderWidth / 2)
+                            .attr("y", borderWidth / 2)
+                            .attr("width", miniWidth)
+                            .attr("height", miniHeight);
+                }
 
                 //Build the mini Map Grid
-                this.buildMiniMapGrid = function (x, y) {
+                this.buildMiniMapGrid = function (miniMapSVG, x, y, mapName) {
                     for (rectX = 0; rectX < x; rectX++) {
                         for (rectY = 0; rectY < y; rectY++) {
                             var rects = miniMapSVG.append("rect")
@@ -127,7 +177,7 @@
                                     .attr("id", "mini" + "/" + rectX + "/" + rectY)
                                     .on("click", function () {
                                         var myMainMap = new MainMap();
-                                        myMainMap.performAction("main", this.id);
+                                        myMainMap.performAction("main", this.id, mapName);
                                     });
                         }
                     }
@@ -142,7 +192,7 @@
 
                 arguments.callee._singletonInstance = this;
 
-                this.performAction = function (action, rectID) {
+                this.performAction = function (action, rectID, mapName) {
 
                     switch (action) {
                         case "init":
@@ -166,21 +216,38 @@
                             var mySelectedSector = document.getElementById("selectedSector");
                             mySelectedSector.innerText = "Sector Selected: Col: " + xy[1] + " / Row: " + xy[2];
 
-                            //Replace HTML Div Main Map
-                            d3.select("div#mainMap").remove();
-                            var div = document.createElement("div");
-                            div.id = "mainMap";
-                            div.style = "display: inline; white-space: nowrap;";
-                            document.getElementById("mainmapsection").appendChild(div);
+                            this.reconstructMainMapDiv();
 
                             //Create mainMapSVG and Border
                             var mainMapSVG = this.buildMainSVGBorder();
 
                             //Load Image into mainMap
-                            this.buildMainImage(mainMapSVG, "{{ imgLibrary }}/MapsMaster-001-" + xy[1] + "-" + xy[2] + ".jpg");
+                            var shortMapName = mapName.substr(0, mapName.length - 4);
+                            this.buildMainImage(mainMapSVG, "{{ imgLibrary }}" + shortMapName + "-" + xy[1] + "-" + xy[2] + ".jpg");
 
                             //Build Main Map Grid
                             this.buildMainGrid(mainMapSVG);
+                            break;
+                        case "reset":
+
+                            var mySelectedSector = document.getElementById("selectedSector");
+                            mySelectedSector.innerText = "Sector Selected:";
+
+                            this.reconstructMainMapDiv();
+
+                            //Create mainMapSVG and Border
+                            var mainMapSVG = this.buildMainSVGBorder();
+
+                            //Load Image into mainMap
+                            this.buildMainImage(mainMapSVG, "{{ imgLibrary }}/DisplaySnow-blue.gif");
+
+                            //Load text on display snow
+                            mainMapSVG.append("text").text("Click on a the mini map to zoom in on a sector.")
+                                    .attr("x", "25")
+                                    .attr("y", "25")
+                                    .attr("font-family", "Orbitron")
+                                    .attr("font-size", "1em")
+                                    .attr("fill", "black");
                             break;
                         default:
                             alert("MainMap has been called with invalid action. [" + action + "]")
@@ -234,6 +301,15 @@
                         }
                     }
                 };
+
+                this.reconstructMainMapDiv = function () {
+                    //Replace HTML Div Main Map
+                    d3.select("div#mainMap").remove();
+                    var div = document.createElement("div");
+                    div.id = "mainMap";
+                    div.style = "display: inline; white-space: nowrap;";
+                    document.getElementById("mainmapsection").appendChild(div);
+                }
 
                 this.markAsRestricted = function (rectID, mainMapSVG) {
                     var xy = rectID.split("/");
