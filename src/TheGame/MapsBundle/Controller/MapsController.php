@@ -71,10 +71,15 @@ class MapsController extends Controller
      */
     public function showAction(Maps $map)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $tiles = $em->getRepository('TheGameMapsBundle:Tiles')->findBy(array('mapId' => $map->getId()));
+
         $deleteForm = $this->createDeleteForm($map);
 
         return $this->render('maps/show.html.twig', array(
             'map' => $map,
+            'tiles' => $tiles,
             'jsLibrary' => $this->getParameter('js_library'),
             'cssLibrary' => $this->getParameter('css_library'),
             'delete_form' => $deleteForm->createView(),
@@ -142,7 +147,6 @@ class MapsController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('crud_maps_delete', array('id' => $map->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
