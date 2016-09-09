@@ -3,8 +3,8 @@ h1 {
   font-size: 3em;
 }
 p {
-    color: black;
-    font-family: Orbitron, "serif";
+  color: black;
+  font-family: Orbitron, "serif";
 }
 th {
   font-family: Orbitron, "serif";
@@ -23,10 +23,10 @@ li:before {
   content: '\25C8';
 }
 li.ui-menu-item:before {
-    content: none;
+  content: none;
 }
 .removeIcon:before {
-    content: none;
+  content: none;
 }
 .appPanel {
   border-style: solid;
@@ -62,28 +62,32 @@ li.ui-menu-item:before {
   text-decoration: none;
 }
 .divborder {
-    border-color: #50a8d5;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 4px;
+  border-color: #50a8d5;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 4px;
 }
 .divborder_scroll {
-    border-color: #50a8d5;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 4px;
-    overflow-y: scroll;
+  border-color: #50a8d5;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 4px;
+  overflow-y: scroll;
+}
+
+.divinputwrapper {
+  margin-top: 15px;
 }
 .infobox {
   border-style: solid;
   border-color: #50a8d5;
   border-radius: 5px;
-    float: left;
-    margin: 5px 0px 1px 0px;
-    height: 30px;
-    width: 95%;
+  float: left;
+  margin: 5px 0px 1px 0px;
+  height: 30px;
+  width: 95%;
   vertical-align: top;
-    padding: 2px 2px 2px 2px;
+  padding: 2px 2px 2px 2px;
 }
 .Table {
   position: relative;
@@ -148,21 +152,27 @@ li.ui-menu-item:before {
   font-size: 0.5em;
 }
 .UYBGFont_050em_AlignCenter {
-    font-family: Orbitron, "serif";
-    font-size: 0.5em;
+  font-family: Orbitron, "serif";
+  font-size: 0.5em;
 }
 .UYBGFont_075em {
   font-family: Orbitron, "serif";
   font-size: 0.75em;
 }
 .UYBGFont_075em_AlignCenter {
-    font-family: Orbitron, "serif";
-    font-size: 0.75em;
-    text-align: center;
+  font-family: Orbitron, "serif";
+  font-size: 0.75em;
+  text-align: center;
 }
 .UYBGFont_1em {
   font-family: Orbitron, "serif";
   font-size: 1em;
+}
+
+.UYBGFont_1em_AlignCenter {
+  font-family: Orbitron, "serif";
+  font-size: 1em;
+  text-align: center;
 }
 .UYBGFont_2em {
   font-family: Orbitron, "serif";
@@ -182,43 +192,43 @@ li.ui-menu-item:before {
   text-align: right;
 }
 #maparea {
-    float: none;
-    width: 100%;
-    height: 100%;
+  float: none;
+  width: 100%;
+  height: 100%;
 }
 #minimapsection {
-    float: left;
-    width: 390px;
-    height: 510px;
+  float: left;
+  width: 390px;
+  height: 510px;
 }
 #miniMap {
-    float: left;
-    width: 385px;
-    height: 185px;
+  float: left;
+  width: 385px;
+  height: 185px;
 }
 #minimapdisplay {
-    float: left;
-    width: 385px;
-    height: 95px;
+  float: left;
+  width: 385px;
+  height: 95px;
 }
 #minimapinstruction {
-    float: left;
-    width: 377px;
-    height: 220px;
-    border-color: #50a8d5;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 4px;
-    overflow-y: scroll;
+  float: left;
+  width: 377px;
+  height: 220px;
+  border-color: #50a8d5;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 4px;
+  overflow-y: scroll;
 }
 #mainmapsection {
-    float: left;
-    width: 510px;
-    height: 510px;
+  float: left;
+  width: 510px;
+  height: 510px;
 }
 #toolbarsection {
-    float: left;
-    width: 892px;
-    height: 300px;
-    margin-top: 5px;
+  float: left;
+  width: 892px;
+  height: 300px;
+  margin-top: 5px;
 }

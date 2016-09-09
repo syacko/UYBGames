@@ -6,77 +6,239 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 
     <script>
+        var configObj = {
+            buildable: "",
+            smins: "",
+            subsmins: "",
+            magmins: "",
+            water: "",
+            co2: ""
+        };
+        configObjString = "";
+
         $(function () {
             $("#landGrant").selectmenu({
                 change: function (event, ui) {
                     var mapName = $("#landGrant").val();
                     myMiniMap.performAction("main", mapName);
+                    $("#saveConfig").button("disable");
                 }
             });
             $("#landGrant").selectmenu("option", "width", 230);
+            $("#subtileconf").tabs();
+            $('#checkbox-1').click(function () {
+                if (document.getElementById('checkbox-1').checked) {
+                    configObj["buildable"] = 'n'
+                } else {
+                    configObj["buildable"] = 'y'
+                }
+            });
+            $('#checkbox-2').click(function () {
+                if (document.getElementById('checkbox-2').checked) {
+                    $("#surfaceminerials").selectmenu("enable");
+                    configObj["smins"] = $("#surfaceminerials").val();
+                } else {
+                    $("#surfaceminerials").selectmenu("disable");
+                    configObj["smins"] = "none";
+                }
+            });
+            $('#checkbox-3').click(function () {
+                if (document.getElementById('checkbox-3').checked) {
+                    $("#subsurfaceminerials").selectmenu("enable");
+                    configObj["subsmins"] = $("#subsurfaceminerials").val();
+                } else {
+                    $("#subsurfaceminerials").selectmenu("disable");
+                    configObj["subsmins"] = "none";
+                }
+            });
+            $('#checkbox-4').click(function () {
+                if (document.getElementById('checkbox-4').checked) {
+                    $("#magmaminerials").selectmenu("enable");
+                    configObj["magmins"] = $("#magmaminerials").val();
+                } else {
+                    $("#magmaminerials").selectmenu("disable");
+                    configObj["magmins"] = "none";
+                }
+            });
+            $("#surfaceminerials").selectmenu();
+            $("#surfaceminerials").selectmenu({
+                change: function (event, ui) {
+                    configObj["smins"] = $("#surfaceminerials").val();
+                }
+            });
+            $("#surfaceminerials").selectmenu("disable");
+            $("#subsurfaceminerials").selectmenu();
+            $("#subsurfaceminerials").selectmenu({
+                change: function (event, ui) {
+                    configObj["subsmins"] = $("#subsurfaceminerials").val();
+                }
+            });
+            $("#subsurfaceminerials").selectmenu("disable");
+            $("#magmaminerials").selectmenu();
+            $("#magmaminerials").selectmenu({
+                change: function (event, ui) {
+                    configObj["magmins"] = $("#magmaminerials").val();
+                }
+            });
+            $("#magmaminerials").selectmenu("disable");
+            $('#checkbox-5').click(function () {
+                if (document.getElementById('checkbox-5').checked) {
+                    configObj["water"] = "y";
+                } else {
+                    configObj["water"] = "n";
+                }
+            });
+            $('#checkbox-6').click(function () {
+                if (document.getElementById('checkbox-6').checked) {
+                    configObj["co2"] = "y";
+                } else {
+                    configObj["co2"] = "n";
+                }
+            });
+
+            $("#saveConfig").button();
+            $("#saveConfig").button("disable");
         });
     </script>
 
     {% spaceless %}
-        {# Page Title #}
-        <div style="width: 100%; font-family: Orbitron; font-size: 1em; font-weight: bold; text-align: center;">
-            The Game - Setup
-        </div>
-        {# Page Body #}
-        {# Map Area #}
-        <div id="maparea">
-            {# Mini Map Section #}
-            <div id="minimapsection">
-                <div id="minimapsubsection">
-                    <div id="miniMap"></div>
+    {# Page Title #}
+    <div style="width: 100%; font-family: Orbitron; font-size: 1em; font-weight: bold; text-align: center;">
+        The Game - Setup
+    </div>
+    {# Page Body #}
+    {# Map Area #}
+    <div id="maparea">
+        {# Mini Map Section #}
+        <div id="minimapsection">
+            <div id="minimapsubsection">
+                <div id="miniMap"></div>
+            </div>
+            <div id="minimapdisplay">
+                <div class="infobox">
+                    <label for="landGrant" class="UYBGFont_075em">Mar's Land Grant: </label>
+                    <select name="landGrant" id="landGrant" class="UYBGFont_075em">
+                        {% for mapRow in mapNameResults %}
+                            <option class="removeIcon"
+                                    value="{{ mapRow["mapImageUrl"] }}">{{ mapRow["mapName"] }}</option>
+                        {% endfor %}
+                    </select>
                 </div>
-                <div id="minimapdisplay">
-                    <div class="infobox">
-                        <label for="landGrant" class="UYBGFont_075em">Mar's Land Grant: </label>
-                        <select name="landGrant" id="landGrant" class="UYBGFont_075em">
-                            {% for mapRow in mapNameResults %}
-                                <option class="removeIcon"
-                                        value="{{ mapRow["mapImageUrl"] }}">{{ mapRow["mapName"] }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="infobox">
-                        <p id="selectedSector" class="UYBGFont_075em">Sector Selected: </p>
-                    </div>
-                </div>
-                <div id="minimapinstruction" class="divborder">
-                    <p class="UYBGFont_075em" style="margin: 2px 4px 2px 4px;">Instructions go here</p>
+                <div class="infobox">
+                    <p id="selectedSector" class="UYBGFont_075em">Sector Selected: </p>
                 </div>
             </div>
-            {# Main Map Section #}
-            <div id="mainmapsection">
-                <div id="mainMap" style="display: inline; white-space: nowrap;"></div>
+            <div id="minimapinstruction" class="divborder">
+                <p class="UYBGFont_075em" style="margin: 2px 4px 2px 4px;">Instructions go here</p>
             </div>
         </div>
-        {# Map Configuration Area #}
-        <div id="toolbarsection" class="divborder">
-            <div style="width: 150px;">
-                <p class="UYBGFont_075em" style="margin: .5em 0em .5em 1em;">Quick Links</p>
-                <ul>
-                    <li style="margin: 5px 0px 0px 0px;">
-                        <a class="UYBGFont_075em" style="margin-left: .25em" href="{{ path('crud_maps_index') }}">List
-                            of Maps</a>
-                    </li>
-                    <li style="margin: 5px 0px 0px 0px;">
-                        <a class="UYBGFont_075em" style="margin-left: .25em" href="{{ path('crud_tiles_index') }}">List
-                            of Tiles</a>
-                    </li>
-                </ul>
-            </div>
-            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
-            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
-            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
-            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
-            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
-            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
-            {#<div style="height: 50px; border-style: solid; border-color: green"></div>#}
+        {# Main Map Section #}
+        <div id="mainmapsection">
+            <div id="mainMap" style="display: inline; white-space: nowrap;"></div>
         </div>
+    </div>
+    {# Map Configuration Area #}
+    <div id="toolbarsection" class="divborder">
+        <div id="quicklist" style="float: left; width: 150px;">
+            <p class="UYBGFont_075em" style="margin: .5em 0em .5em 1em;">Quick Links</p>
+            <ul>
+                <li style="margin: 5px 0px 0px 0px;">
+                    <a class="UYBGFont_075em" style="margin-left: .25em" href="{{ path('crud_maps_index') }}">List
+                        of All Maps</a>
+                </li>
+                <li style="margin: 5px 0px 0px 0px;">
+                    <a class="UYBGFont_075em" style="margin-left: .25em" href="{{ path('crud_tiles_index') }}">List
+                        of All Tiles</a>
+                </li>
+            </ul>
+        </div>
+        <div class="UYBGFont_1em_AlignCenter" style="margin-top: 2px;">Sub-Tile Configuration</div>
+        <div id="subtileconf" class="UYBGFont_075em" style="float: right;height: 92%;width: 80%;">
+            <ul>
+                <li class="removeIcon"><a href="#tabs-1" class="UYBGFont_1em_AlignCenter">Properties</a></li>
+                <li class="removeIcon"><a href="#tabs-2" class="UYBGFont_1em_AlignCenter">Proin dolor</a></li>
+                <li class="removeIcon"><a href="#tabs-3" class="UYBGFont_1em_AlignCenter">Aenean lacinia</a></li>
+            </ul>
+            <div id="tabs-1">
+                <fieldset style="border: none; margin: 0px;">
+                    <input type="checkbox" name="checkbox-1" id="checkbox-1" style="margin-bottom: 10px;"><span
+                            class="UYBGFont_1em" style="margin-bottom: 15px;">NOT Buildable</span><br>
+                    <input type="checkbox" name="checkbox-2" id="checkbox-2" style="margin-bottom: 10px;"><span
+                            class="UYBGFont_1em">Surface Minerials </span>
+                    <select name="surfaceminerials" id="surfaceminerials" class="UYBGFont_075em"
+                            style="margin-left: 5px;">
+                        <option class="removeIcon" value="AL">Aluminium Oxide</option>
+                        <option class="removeIcon" value="CA">Calcium Oxide</option>
+                        <option class="removeIcon" value="CR">Chromium Oxide</option>
+                        <option class="removeIcon" value="GY">Gypsum</option>
+                        <option class="removeIcon" value="FE">BlueBerries (FeO)</option>
+                        <option class="removeIcon" value="MA">Magnetite</option>
+                        <option class="removeIcon" value="SC">Silicate</option>
+                        <option class="removeIcon" value="TI">Titanium Oxide</option>
+                    </select><br>
+                    <input type="checkbox" name="checkbox-3" id="checkbox-3" style="margin-bottom: 10px;"><span
+                            class="UYBGFont_1em">Sub-Surface Minerials </span>
+                    <select name="subsurfaceminerials" id="subsurfaceminerials" class="UYBGFont_1em">
+                        <option class="removeIcon" value="AL">Aluminium Oxide</option>
+                        <option class="removeIcon" value="CA">Calcium Oxide</option>
+                        <option class="removeIcon" value="CR">Chromium Oxide</option>
+                        <option class="removeIcon" value="CU">Copper Oxide</option>
+                        <option class="removeIcon" value="AU">Gold Oxide</option>
+                        <option class="removeIcon" value="GY">Gypsum</option>
+                        <option class="removeIcon" value="FE">Iron Oxide</option>
+                        <option class="removeIcon" value="PB">Lead Oxide</option>
+                        <option class="removeIcon" value="LI">Lithium Oxide</option>
+                        <option class="removeIcon" value="LI">Magnetite</option>
+                        <option class="removeIcon" value="NI">Nickel Oxide</option>
+                        <option class="removeIcon" value="PT">Platium Oxide</option>
+                        <option class="removeIcon" value="SC">Silicate</option>
+                        <option class="removeIcon" value="AG">Silver Oxide</option>
+                        <option class="removeIcon" value="SN">Tin Oxide</option>
+                        <option class="removeIcon" value="TI">Titanium Oxide</option>
+                        <option class="removeIcon" value="W">Tungsten Oxide</option>
+                        <option class="removeIcon" value="ZN">Zinc Oxide</option>
+                    </select><br>
+                    <input type="checkbox" name="checkbox-4" id="checkbox-4" style="margin-bottom: 10px;"><span
+                            class="UYBGFont_1em">Magma Minerials </span>
+                    <select name="magmaminerials" id="magmaminerials" class="UYBGFont_075em"
+                            style="margin-left: 5px;">
+                        <option class="removeIcon" value="PB">Lead Oxide</option>
+                        <option class="removeIcon" value="AG">Silver Oxide</option>
+                        <option class="removeIcon" value="SN">Tin Oxide</option>
+                        <option class="removeIcon" value="TI">Titanium Oxide</option>
+                    </select><br>
+                    <input type="checkbox" name="checkbox-5" id="checkbox-5" style="margin-bottom: 10px;"><span
+                            class="UYBGFont_1em">Frozen Water</span><br>
+                    <input type="checkbox" name="checkbox-6" id="checkbox-6" style="margin-bottom: 10px;"><span
+                            class="UYBGFont_1em">Frozen CO2</span><br>
+                </fieldset>
+                <button id="saveConfig" class="ui-button ui-widget ui-corner-all">Save Configuration</button>
 
+            </div>
+            <div id="tabs-2">
+                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id
+                    nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros
+                    molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula
+                    in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis.
+                    Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat.
+                    Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod
+                    felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+            </div>
+            <div id="tabs-3">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel
+                    vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class
+                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.
+                    Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium.
+                    Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla
+                    facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse
+                    potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor
+                    eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi
+                    lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum
+                    rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus
+                    hendrerit hendrerit.</p>
+            </div>
+        </div>
         <script>
 
             var miniWidth = 375, miniHeight = 175, borderWidth = 10, displayBorderColor = "#50a8d5", gridWidth = 25;
@@ -133,8 +295,8 @@
                 this.buildMiniSVGBorder = function () {
                     //Create miniMapSVG
                     var miniMapSVG = d3.select("div#miniMap").append("svg")
-                        .attr("width", miniWidth + borderWidth)
-                        .attr("height", miniHeight + borderWidth)
+                            .attr("width", miniWidth + borderWidth)
+                            .attr("height", miniHeight + borderWidth)
                             .attr("id", "miniMapSVG");
                     //Create MiniMapBorder
                     miniMapSVG.append("rect")
@@ -177,6 +339,7 @@
                                     .on("click", function () {
                                         var myMainMap = new MainMap();
                                         myMainMap.performAction("main", this.id, mapName);
+                                        $("#saveConfig").button("enable");
                                     });
                         }
                     }
@@ -295,7 +458,7 @@
                                     .attr("id", "main" + "/" + rectX + "/" + rectY)
                                     .on("click", function () {
                                         var myMainMap = new MainMap();
-                                        myMainMap.markAsRestricted(this.id, mainMapSVG);
+                                        myMainMap.markTile(this.id, mainMapSVG);
                                     });
                         }
                     }
@@ -310,32 +473,49 @@
                     document.getElementById("mainmapsection").appendChild(div);
                 }
 
-                this.markAsRestricted = function (rectID, mainMapSVG) {
+                this.markTile = function (rectID, mainMapSVG) {
                     var xy = rectID.split("/");
 
-                    console.log(document.getElementById(rectID).getAttribute("restricted"));
                     var elem = document.getElementById(rectID);
-                    if (elem.getAttribute("restricted") != null) {
-                        elem.removeAttribute("stroke", "darkred");
-                        elem.removeAttribute("restricted");
+                    if (elem.getAttribute("marked") != null) {
+                        elem.removeAttribute("stroke", "yellow");
+                        elem.removeAttribute("marked");
                         var elem = document.getElementById("path/" + xy[1] + "/" + xy[2]);
                         elem.parentNode.removeChild(elem);
                     } else {
-                        elem.setAttribute("stroke", "darkred");
-                        elem.setAttribute("restricted", "yes");
+                        elem.setAttribute("stroke", "yellow");
+                        elem.setAttribute("marked", "yes");
                         mainMapSVG.append("path")
                                 .attr("id", "path/" + xy[1] + "/" + xy[2])
                                 .attr('d', 'M ' + (xy[1] * 25 + borderWidth / 2) + ' ' + (xy[2] * 25 + borderWidth / 2) + ' l 25 25')
                                 .attr('stroke-width', 2)
-                                .attr('stroke', 'darkred')
+                                .attr('stroke', 'yellow')
                                 .on("click", function () {
                                     var myMainMap = new MainMap();
-                                    myMainMap.markAsRestricted(rectID, mainMapSVG);
+                                    myMainMap.markTile(rectID, mainMapSVG);
                                 });
                     }
                 }
             }
-
+            $("#saveConfig").button().click(function () {
+                configObjString = JSON.stringify(configObj);
+                var mapLocation = {
+                    row: "",
+                    col: "",
+                    config: ""
+                }
+                var mapLocations = new Array(), ptr = 0;
+                for (r = 0; r < 20; r++) {
+                    for (c = 0; c < 20; c++) {
+                        if (document.getElementById("main/" + c + "/" + r).getAttribute("marked")) {
+                            mapLocation["row"] = r;
+                            mapLocation["col"] = c;
+                            mapLocation["config"] = configObjString;
+                            mapLocations[ptr++] = JSON.stringify(mapLocation);
+                        }
+                    }
+                }
+            });
         </script>
-    {% endspaceless %}
+        {% endspaceless %}
 {% endblock %}
