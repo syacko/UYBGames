@@ -125,7 +125,7 @@
                     </select>
                 </div>
                 <div class="infobox">
-                    <p id="selectedSector" class="UYBGFont_075em">Sector Selected: </p>
+                    <p id="selectedSector" class="UYBGFont_075em">Sector Selected: None </p>
                 </div>
             </div>
             <div id="minimapinstruction" class="divborder">
@@ -376,7 +376,7 @@
                             var xy = rectID.split("/");
 
                             var mySelectedSector = document.getElementById("selectedSector");
-                            mySelectedSector.innerText = "Sector Selected: Col: " + xy[1] + " / Row: " + xy[2];
+                            mySelectedSector.innerText = "Sector Selected: Col=" + xy[1] + " / Row=" + xy[2];
 
                             this.reconstructMainMapDiv();
 
@@ -393,7 +393,7 @@
                         case "reset":
 
                             var mySelectedSector = document.getElementById("selectedSector");
-                            mySelectedSector.innerText = "Sector Selected:";
+                            mySelectedSector.innerText = "Sector Selected: None";
 
                             this.reconstructMainMapDiv();
 
@@ -515,6 +515,20 @@
                         }
                     }
                 }
+                var mySelectedSector = document.getElementById("selectedSector").innerText.split(":");
+                var tileData = new Array();
+                tileData[0] = mySelectedSector[1];
+                tileData[1] = mapLocations.toString();
+                alert(JSON.stringify(tileData));
+                var jqxhr = $.post("http://mybitnami:8000/setup/saveconfig", JSON.stringify(tileData), function (reply) {
+                    alert("success: " + reply);
+                })
+                        .fail(function () {
+                            alert("error");
+                        })
+//                        .always(function () {
+//                            alert("finished");
+//                        });
             });
         </script>
         {% endspaceless %}

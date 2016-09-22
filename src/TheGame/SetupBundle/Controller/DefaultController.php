@@ -9,17 +9,25 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Doctrine\DBAL\Query\Expression;
+use FOS\RestBundle\Controller\FOSRestController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
-class DefaultController extends Controller
+
+/**
+ * Maps controller.
+ *
+ * @Route("/setup")
+ */
+class DefaultController extends FOSRestController
 {
     /**
-     * @Route("/setup/")
+     * Displays the Setup Screen.
+     *
+     * @Route("/", name="setup_index")
+     * @Method("GET")
      */
     public function indexAction()
     {
-        $map = new Maps();
-        $map->setMapName('TEST MAP 1');
-
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
             'SELECT m.mapName, m.mapImageUrl FROM TheGameMapsBundle:Maps m ORDER BY m.mapName ASC'
@@ -33,5 +41,28 @@ class DefaultController extends Controller
                 'imgLibrary' => $this->getParameter('img_library'),
                 'mapNameResults' => $mapNameResults,
             ));
+    }
+
+    /**
+     * Saves tile configuration data
+     *
+     * @Route("/saveconfig", name="setup_saveconfig")
+     * @Method({"GET", "POST"})
+     */
+    public function saveconfigAction(Request $request)
+    {
+        var_dump($request);
+        echo "<br><br><br>";
+        var_dump($request->server);
+        echo "<br><br><br>";
+        $serverData = $request->server;
+        var_dump($serverData->get('QUERY_STRING'));
+        echo "<br><br><br>";
+
+        $view = $this->view($request, 200)
+            ->setTemplate("TheGameSetupBundle:Default:saveconfig.html.twig")
+            ->setData($request);
+
+        return $this->handleView($view);
     }
 }
