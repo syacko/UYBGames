@@ -15,12 +15,15 @@
             co2: ""
         };
         configObjString = "";
+        var mapId = "";
 
         $(function () {
             $("#landGrant").selectmenu({
                 change: function (event, ui) {
-                    var mapName = $("#landGrant").val();
-                    myMiniMap.performAction("main", mapName);
+                    var mapIdName = $("#landGrant").val();
+                    mapData = mapIdName.split(':');
+                    mapId = mapData[0];
+                    myMiniMap.performAction("main", mapData[1]);
                     $("#saveConfig").button("disable");
                 }
             });
@@ -120,7 +123,12 @@
                     <select name="landGrant" id="landGrant" class="UYBGFont_075em">
                         {% for mapRow in mapNameResults %}
                             <option class="removeIcon"
-                                    value="{{ mapRow["mapImageUrl"] }}">{{ mapRow["mapName"] }}</option>
+                                    value="{{ mapRow["id"] }}:{{ mapRow["mapImageUrl"] }}">{{ mapRow["mapName"] }}</option>
+                            {% if loop.first %}
+                            <script>
+                                mapId = {{ mapRow["id"] }};
+                            </script>
+                            {% endif %}
                         {% endfor %}
                     </select>
                 </div>
@@ -376,7 +384,7 @@
                             var xy = rectID.split("/");
 
                             var mySelectedSector = document.getElementById("selectedSector");
-                            mySelectedSector.innerText = "Sector Selected: Col=" + xy[1] + " / Row=" + xy[2];
+                            mySelectedSector.innerText = "Sector Selected: Col=" + xy[1] + " Row=" + xy[2];
 
                             this.reconstructMainMapDiv();
 
@@ -497,30 +505,30 @@
                     }
                 }
             }
+            function mapLoc(row, col, config) {
+                this.cellrow = row;
+                this.cellcol = col;
+                this.cellconfig = config;
+            }
             $("#saveConfig").button().click(function () {
-                configObjString = JSON.stringify(configObj);
-                var mapLocation = {
-                    row: "",
-                    col: "",
-                    config: ""
-                }
                 var mapLocations = new Array(), ptr = 0;
                 for (r = 0; r < 20; r++) {
                     for (c = 0; c < 20; c++) {
                         if (document.getElementById("main/" + c + "/" + r).getAttribute("marked")) {
-                            mapLocation["row"] = r;
-                            mapLocation["col"] = c;
-                            mapLocation["config"] = configObjString;
-                            mapLocations[ptr++] = JSON.stringify(mapLocation);
+                            var myMapLoc = new mapLoc(r, c, configObj);
+                            mapLocations[ptr++] = myMapLoc;
+                            var myMapLoc = null;
                         }
                     }
                 }
                 var mySelectedSector = document.getElementById("selectedSector").innerText.split(":");
-                var tileData = new Array();
-                tileData[0] = mySelectedSector[1];
-                tileData[1] = mapLocations.toString();
-                alert(JSON.stringify(tileData));
-                var jqxhr = $.post("http://mybitnami:8000/setup/saveconfig", JSON.stringify(tileData), function (reply) {
+                var mySSColRow = mySelectedSector[1].toString().replace(",", "").replace(",", "").split(" ");
+                var tileData = new Object();
+                tileData['mapid'] = mapId;
+                tileData['colrow'] = mySSColRow[1].toString() + ' ' + mySSColRow[2].toString();
+                tileData['configdata'] = mapLocations;
+                jsonTileData = JSON.stringify(tileData);
+                var jqxhr = $.post("http://mybitnami:8000/setup/saveconfig", jsonTileData.toString(), function (reply) {
                     alert("success: " + reply);
                 })
                         .fail(function () {
@@ -530,6 +538,7 @@
 //                            alert("finished");
 //                        });
             });
+
         </script>
         {% endspaceless %}
 {% endblock %}

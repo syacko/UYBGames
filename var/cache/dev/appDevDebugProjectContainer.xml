@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/Users/syacko/PhpstormProjects/UYBGames/app</parameter>
+    <parameter key="kernel.root_dir">/opt/lappstack-5.6.18-1/frameworks/UYBGames/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/Users/syacko/PhpstormProjects/UYBGames/var/logs</parameter>
+    <parameter key="kernel.cache_dir">/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -53,7 +53,7 @@
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/Users/syacko/PhpstormProjects/UYBGames/app/../var/sessions/dev</parameter>
+    <parameter key="session.save_path">/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/../var/sessions/dev</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
@@ -66,7 +66,8 @@
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/profiler
+    </parameter>
     <parameter key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</parameter>
@@ -78,12 +79,15 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">/Users/syacko/PhpstormProjects/UYBGames/app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/config/routing_dev.yml
+    </parameter>
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">
+      /opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/appDevDebugProjectContainer.xml
+    </parameter>
     <parameter key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</parameter>
     <parameter key="security.authentication.trust_resolver.rememberme_class">Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
@@ -177,7 +181,9 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">
+      /opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/swiftmailer/spool/default
+    </parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -295,7 +301,9 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">
+      /opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/doctrine/orm/Proxies
+    </parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -478,7 +486,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/Users/syacko/PhpstormProjects/UYBGames/app/Resources</argument>
+                <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -505,7 +513,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/Users/syacko/PhpstormProjects/UYBGames/app/Resources</argument>
+                <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/Resources</argument>
               </service>
             </argument>
             <argument type="collection"/>
@@ -518,7 +526,7 @@
             <argument type="service">
               <service class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
                 <argument type="service" id="kernel"/>
-                <argument>/Users/syacko/PhpstormProjects/UYBGames/app</argument>
+                <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app</argument>
                 <argument type="collection"/>
               </service>
             </argument>
@@ -546,7 +554,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>/Users/syacko/PhpstormProjects/UYBGames/app/Resources</argument>
+      <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
       <argument>345e814e396a1155acb93594e7ce94174b2a08be</argument>
@@ -661,7 +669,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/translations</argument>
+        <argument key="cache_dir">/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="collection"/>
@@ -1121,7 +1129,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev</argument>
+      <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev</argument>
     </service>
     <service id="validator" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
@@ -1151,7 +1159,9 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
+          <argument>
+            /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml
+          </argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1183,7 +1193,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/profiler</argument>
+          <argument>file:/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/profiler</argument>
         </service>
       </argument>
       <argument type="service" id="monolog.logger.profiler" on-invalid="null"/>
@@ -1421,8 +1431,7 @@
                 <argument type="service">
                   <service class="FOS\RestBundle\Routing\Loader\Reader\RestControllerReader" public="false">
                     <argument type="service">
-                      <service class="FOS\RestBundle\Routing\Loader\Reader\RestActionReader"
-                               public="false">
+                      <service class="FOS\RestBundle\Routing\Loader\Reader\RestActionReader" public="false">
                         <argument type="service" id="annotation_reader"/>
                         <argument type="service" id="fos_rest.request.param_fetcher.reader"/>
                         <argument type="service" id="fos_rest.inflector"/>
@@ -1647,7 +1656,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57de26362c1bc9.14739517</argument>
+            <argument>57f2818e8f6a09.10602615</argument>
           </service>
         </argument>
       </argument>
@@ -1776,7 +1785,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57de26362c1bc9.14739517</argument>
+            <argument>57f2818e8f6a09.10602615</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1882,7 +1891,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument>null</argument>
-            <argument>/Users/syacko/PhpstormProjects/UYBGames/app</argument>
+            <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -2041,7 +2050,7 @@
       <argument>twig.controller.exception:showAction</argument>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/Users/syacko/PhpstormProjects/UYBGames/var/logs/dev.log</argument>
+      <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2145,17 +2154,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_06752055b7be501a08f651511f768cfb35e6f4456f29dc82fb2701f66a442249</argument>
+        <argument>sf2orm_default_977c811ae762519c89b49d72704cabcdb5775fd4d64d874c3416661985e5e68f</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_06752055b7be501a08f651511f768cfb35e6f4456f29dc82fb2701f66a442249</argument>
+        <argument>sf2orm_default_977c811ae762519c89b49d72704cabcdb5775fd4d64d874c3416661985e5e68f</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_06752055b7be501a08f651511f768cfb35e6f4456f29dc82fb2701f66a442249</argument>
+        <argument>sf2orm_default_977c811ae762519c89b49d72704cabcdb5775fd4d64d874c3416661985e5e68f</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
@@ -2191,7 +2200,10 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
-                        <argument key="/Users/syacko/PhpstormProjects/UYBGames/src/TheGame/MapsBundle/Resources/config/doctrine">TheGame\MapsBundle\Entity</argument>
+                        <argument
+                                key="/opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/MapsBundle/Resources/config/doctrine">
+                          TheGame\MapsBundle\Entity
+                        </argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2204,7 +2216,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/doctrine/orm/Proxies</argument>
+            <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2603,12 +2615,12 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/sessions</argument>
+      <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-      <argument>/Users/syacko/PhpstormProjects/UYBGames/app/../var/sessions/dev</argument>
+      <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/../var/sessions/dev</argument>
     </service>
     <service id="templating.loader" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\FilesystemLoader">
       <argument type="service" id="templating.locator"/>
@@ -2621,9 +2633,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>/Users/syacko/PhpstormProjects/UYBGames/app/config/routing_dev.yml</argument>
+      <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev</argument>
+        <argument key="cache_dir">/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -2647,7 +2659,7 @@
       </argument>
       <argument type="service">
         <service class="Doctrine\Common\Cache\FilesystemCache" public="false">
-          <argument>/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/annotations</argument>
+          <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/annotations</argument>
         </service>
       </argument>
       <argument>true</argument>
@@ -2664,46 +2676,60 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
+        <argument>
+          /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views
+        </argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
+        <argument>
+          /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views
+        </argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
+        <argument>
+          /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views
+        </argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
+        <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/views
+        </argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/doctrine/doctrine-bundle/Resources/views
+        </argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/src/TheGame/MapsBundle/Resources/views</argument>
+        <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/MapsBundle/Resources/views</argument>
         <argument>TheGameMaps</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/src/TheGame/SetupBundle/Resources/views</argument>
+        <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/SetupBundle/Resources/views</argument>
         <argument>TheGameSetup</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
+        <argument>
+          /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views
+        </argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
+        <argument>
+          /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views
+        </argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/app/Resources/views</argument>
+        <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+        <argument>
+          /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form
+        </argument>
       </call>
     </service>
     <service id="logger" class="Symfony\Bridge\Monolog\Logger">
@@ -2810,52 +2836,52 @@
                   <service class="Metadata\Driver\FileLocator" public="false">
                     <argument type="collection">
                       <argument key="Symfony\Bundle\FrameworkBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\SecurityBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\TwigBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\MonologBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/monolog-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/monolog-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\SwiftmailerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Doctrine\Bundle\DoctrineBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/doctrine/doctrine-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/doctrine/doctrine-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\FrameworkExtraBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/framework-extra-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/framework-extra-bundle/Resources/config/serializer
                       </argument>
                       <argument key="FOS\RestBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/friendsofsymfony/rest-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/friendsofsymfony/rest-bundle/Resources/config/serializer
                       </argument>
                       <argument key="JMS\SerializerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer
                       </argument>
                       <argument key="AppBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/AppBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/AppBundle/Resources/config/serializer
                       </argument>
                       <argument key="TheGame\MapsBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/TheGame/MapsBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/MapsBundle/Resources/config/serializer
                       </argument>
                       <argument key="TheGame\SetupBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/TheGame/SetupBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/SetupBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\DebugBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\DistributionBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/distribution-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/distribution-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\GeneratorBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/generator-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/generator-bundle/Resources/config/serializer
                       </argument>
                     </argument>
                   </service>
@@ -2868,52 +2894,52 @@
                   <service class="Metadata\Driver\FileLocator" public="false">
                     <argument type="collection">
                       <argument key="Symfony\Bundle\FrameworkBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\SecurityBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\TwigBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\MonologBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/monolog-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/monolog-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\SwiftmailerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Doctrine\Bundle\DoctrineBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/doctrine/doctrine-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/doctrine/doctrine-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\FrameworkExtraBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/framework-extra-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/framework-extra-bundle/Resources/config/serializer
                       </argument>
                       <argument key="FOS\RestBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/friendsofsymfony/rest-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/friendsofsymfony/rest-bundle/Resources/config/serializer
                       </argument>
                       <argument key="JMS\SerializerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer
                       </argument>
                       <argument key="AppBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/AppBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/AppBundle/Resources/config/serializer
                       </argument>
                       <argument key="TheGame\MapsBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/TheGame/MapsBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/MapsBundle/Resources/config/serializer
                       </argument>
                       <argument key="TheGame\SetupBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/TheGame/SetupBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/SetupBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\DebugBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\DistributionBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/distribution-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/distribution-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\GeneratorBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/generator-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/generator-bundle/Resources/config/serializer
                       </argument>
                     </argument>
                   </service>
@@ -2926,52 +2952,52 @@
                   <service class="Metadata\Driver\FileLocator" public="false">
                     <argument type="collection">
                       <argument key="Symfony\Bundle\FrameworkBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\SecurityBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\TwigBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\MonologBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/monolog-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/monolog-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\SwiftmailerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/swiftmailer-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Doctrine\Bundle\DoctrineBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/doctrine/doctrine-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/doctrine/doctrine-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\FrameworkExtraBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/framework-extra-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/framework-extra-bundle/Resources/config/serializer
                       </argument>
                       <argument key="FOS\RestBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/friendsofsymfony/rest-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/friendsofsymfony/rest-bundle/Resources/config/serializer
                       </argument>
                       <argument key="JMS\SerializerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer
                       </argument>
                       <argument key="AppBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/AppBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/AppBundle/Resources/config/serializer
                       </argument>
                       <argument key="TheGame\MapsBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/TheGame/MapsBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/MapsBundle/Resources/config/serializer
                       </argument>
                       <argument key="TheGame\SetupBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/src/TheGame/SetupBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/src/TheGame/SetupBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\DebugBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer
                       </argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\DistributionBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/distribution-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/distribution-bundle/Resources/config/serializer
                       </argument>
                       <argument key="Sensio\Bundle\GeneratorBundle">
-                        /Users/syacko/PhpstormProjects/UYBGames/vendor/sensio/generator-bundle/Resources/config/serializer
+                        /opt/lappstack-5.6.18-1/frameworks/UYBGames/vendor/sensio/generator-bundle/Resources/config/serializer
                       </argument>
                     </argument>
                   </service>
@@ -3018,7 +3044,7 @@
           <call method="setCache">
             <argument type="service">
               <service class="Metadata\Cache\FileCache" public="false">
-                <argument>/Users/syacko/PhpstormProjects/UYBGames/var/cache/dev/jms_serializer</argument>
+                <argument>/opt/lappstack-5.6.18-1/frameworks/UYBGames/var/cache/dev/jms_serializer</argument>
               </service>
             </argument>
           </call>
