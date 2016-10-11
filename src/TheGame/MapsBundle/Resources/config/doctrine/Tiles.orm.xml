@@ -16,7 +16,7 @@
     <field name="tileColRow" type="string" column="tile_col_row" length="50" nullable="true">
       <options>
         <option name="fixed"/>
-        <option name="comment">This field is in JSON format. An example is {"col": 0,"row": 0}</option>
+          <option name="comment">This field is not in JSON format. An example is Col=0 Row=0</option>
       </options>
     </field>
     <field name="tileSectorName" type="string" column="tile_sector_name" length="50" nullable="true">

@@ -55,27 +55,36 @@ class DefaultController extends FOSRestController
     {
         $tileConfigData = json_decode($request->getContent(), true);
 
-//        $logger = $this->get('logger');
-//        $logger->info('START===================================================');
-//        $logger->info('========================================================');
-//        $logger->info('========================================================');
-//        $logger->info('========================================================');
-//        $logger->info('==> Tile Config Data (mapid): ' . $tileConfigData['mapid']);
-//        $logger->info('==> Tile Config Data (col/row): ' . $tileConfigData['colrow']);
-//        ob_start();
-//        var_dump($tileConfigData['configdata']);
-//        $result = ob_get_clean();
-//        $logger->info('==> Tile Config Data (configdata): ' . $result);
-//        $logger->info('DONE====================================================');
-
-        $tiles = new Tiles();
-        $tiles->setMapId($tileConfigData['mapid']);
-        $tiles->setTileColRow($tileConfigData['colrow']);
-        $tiles->setTileData(serialize($tileConfigData['configdata']));
+        $logger = $this->get('logger');
+        $logger->info('START === START ========================================');
+        $logger->info('========================================================');
+        $logger->info('========================================================');
+        $logger->info('========================================================');
+        $logger->info('==> Tile Config Data (mapid): ' . $tileConfigData['mapid']);
+        $logger->info('==> Tile Config Data (col/row): ' . $tileConfigData['colrow']);
 
         $em = $this->getDoctrine()->getManager();
-        $em->persist($tiles);
+        $q = $em->createQuery('SELECT t.mapId FROM TheGameMapsBundle:Tiles t WHERE t.mapId = :mapid AND t.tileColRow = :colrow');
+        $q->setParameter('mapid', $tileConfigData['mapid']);
+        $q->setParameter('colrow', $tileConfigData['colrow']);
+        $sqlResult = $q->getResult();
+        if (count($sqlResult, COUNT_RECURSIVE) < 1) {
+            $tiles = new Tiles();
+            $tiles->setMapId($tileConfigData['mapid']);
+            $tiles->setTileColRow($tileConfigData['colrow']);
+            $tiles->setTileData(serialize($tileConfigData['configdata']));
+            $em->persist($tiles);
+            $logger->info('=== INSERT =============================================');
+        } else {
+            $q = $em->createQuery('UPDATE TheGameMapsBundle:Tiles t SET t.tileData = :configdata WHERE t.mapId = :mapid AND t.tileColRow = :colrow');
+            $q->setParameter('configdata', serialize($tileConfigData['configdata']));
+            $q->setParameter('mapid', $tileConfigData['mapid']);
+            $q->setParameter('colrow', $tileConfigData['colrow']);
+            $numUpdated = $q->execute();
+            $logger->info('=== UPDATE === RECS UPDATED: ' . $numUpdated . ' =========================');
+        }
         $em->flush();
+        $logger->info('DONE === DONE === DONE =================================');
 
         $view = $this->view($request, 200)
             ->setTemplate("TheGameSetupBundle:Default:saveconfig.html.twig")
