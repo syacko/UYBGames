@@ -4,8 +4,14 @@
 
 {% block body %}
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-
     <script>
+        $(document).ajaxStart(function () {
+            $('#pagelock').css('display', 'block');
+        });
+        $(document).ajaxStop(function () {
+            $('#pagelock').css('display', 'none');
+        });
+
         var configObj = {
             buildable: "",
             smins: "",
@@ -103,7 +109,10 @@
             $("#saveConfig").button("disable");
         });
     </script>
-
+    <div id="pagelock">
+        <div id="displayloadingicon" style="background:url('{{ imgLibrary }}/pleasewait.svg');">
+        </div>
+    </div>
     {% spaceless %}
     {# Page Title #}
     <div style="width: 100%; font-family: Orbitron; font-size: 1em; font-weight: bold; text-align: center;">
@@ -345,6 +354,7 @@
                                     .attr("stroke", "antiquewhite")
                                     .attr("id", "mini" + "/" + rectX + "/" + rectY)
                                     .on("click", function () {
+
                                         var myMainMap = new MainMap();
                                         myMainMap.performAction("main", this.id, mapName);
                                         $("#saveConfig").button("enable");
@@ -385,6 +395,19 @@
 
                             var mySelectedSector = document.getElementById("selectedSector");
                             mySelectedSector.innerText = "Sector Selected: Col=" + xy[1] + " Row=" + xy[2];
+
+                            var tileData = new Object();
+                            formatColRow(tileData);
+                            jsonTileData = JSON.stringify(tileData);
+                            var jqxhr = $.post("http://mybitnami:8000/setup/readconfig", jsonTileData.toString(), function (reply) {
+                                alert("success: " + reply);
+                            })
+                                    .fail(function (jqxhr) {
+                                        alert("error:" + jqxhr.responseFields);
+                                    })
+//                        .always(function () {
+//                            alert("finished");
+//                        });
 
                             this.reconstructMainMapDiv();
 
@@ -510,6 +533,12 @@
                 this.cellcol = col;
                 this.cellconfig = config;
             }
+            function formatColRow(tileData) {
+                var mySelectedSector = document.getElementById("selectedSector").innerText.split(":");
+                var mySSColRow = mySelectedSector[1].toString().replace(",", "").replace(",", "").split(" ");
+                tileData['mapid'] = mapId;
+                tileData['colrow'] = mySSColRow[1].toString() + ' ' + mySSColRow[2].toString();
+            }
             $("#saveConfig").button().click(function () {
                 var mapLocations = new Array(), ptr = 0;
                 for (r = 0; r < 20; r++) {
@@ -521,11 +550,8 @@
                         }
                     }
                 }
-                var mySelectedSector = document.getElementById("selectedSector").innerText.split(":");
-                var mySSColRow = mySelectedSector[1].toString().replace(",", "").replace(",", "").split(" ");
                 var tileData = new Object();
-                tileData['mapid'] = mapId;
-                tileData['colrow'] = mySSColRow[1].toString() + ' ' + mySSColRow[2].toString();
+                formatColRow(tileData);
                 tileData['configdata'] = mapLocations;
                 jsonTileData = JSON.stringify(tileData);
                 var jqxhr = $.post("http://mybitnami:8000/setup/saveconfig", jsonTileData.toString(), function (reply) {
