@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6813a132-eb5c-4b59-a8f8-beb23f690ff1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.css" afterPath="$PROJECT_DIR$/web/css_library/thegame.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.less" afterPath="$PROJECT_DIR$/web/css_library/thegame.less" />
     </list>
     <ignored path="UYBGames.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -843,14 +841,7 @@
       <workItem from="1475035592681" duration="38365000" />
       <workItem from="1475775566408" duration="11000" />
       <workItem from="1475775587017" duration="1067000" />
-      <workItem from="1475855266496" duration="19449000" />
-    </task>
-    <task id="LOCAL-00005" summary="Update to include the TheGame:MapBundle controller">
-      <created>1459532219580</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1459532219580</updated>
+      <workItem from="1475855266496" duration="19520000" />
     </task>
     <task id="LOCAL-00006" summary="Update to include the TheGame:MapBundle controller">
       <created>1459532243645</created>
@@ -1188,11 +1179,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476494231070</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Added readconfigAction&#10;Modified saveconfigAction&#10;Added Jquery OnDocument start and stop ajax event&#10;Added pagelock and displayloadingicon to setup page&#10;Added ajax call in setup.html.twig to readconfigAction&#10;Created function formatColRow to reuse code&#10;Added formating for pagelock div and displayloadingicon div&#10;Added pleasewait.svg to img_UYBG directory&#10;Moved pleasewait icon display to be on main map">
+      <created>1476494398646</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1476494398646</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163739000" />
+    <option name="totallyTimeSpent" value="163810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -1240,7 +1238,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="Corrected Tile JSON label. Was incorrectly, Tile Data." />
     <MESSAGE value="Add Twig: cache: false" />
     <MESSAGE value="Made formatting changes to edit.html.twig and new.html.twig&#10;Modified the formbuilder for edit and new methods" />
     <MESSAGE value="Create the Tiles.orm.xml and update the tiles_playable definition to have the default value.&#10;Added the Apache 2.0 License file&#10;Added the README.MD file" />
@@ -1265,7 +1262,8 @@
     <MESSAGE value="Implemented SaveConfiguration data being saved" />
     <MESSAGE value="Tiles.orm.xml field comment was updated.&#10;Add code to insert or update as needed tile record." />
     <MESSAGE value="Added readconfigAction&#10;Modified saveconfigAction&#10;Added Jquery OnDocument start and stop ajax event&#10;Added pagelock and displayloadingicon to setup page&#10;Added ajax call in setup.html.twig to readconfigAction&#10;Created function formatColRow to reuse code&#10;Added formating for pagelock div and displayloadingicon div&#10;Added pleasewait.svg to img_UYBG directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added readconfigAction&#10;Modified saveconfigAction&#10;Added Jquery OnDocument start and stop ajax event&#10;Added pagelock and displayloadingicon to setup page&#10;Added ajax call in setup.html.twig to readconfigAction&#10;Created function formatColRow to reuse code&#10;Added formating for pagelock div and displayloadingicon div&#10;Added pleasewait.svg to img_UYBG directory" />
+    <MESSAGE value="Added readconfigAction&#10;Modified saveconfigAction&#10;Added Jquery OnDocument start and stop ajax event&#10;Added pagelock and displayloadingicon to setup page&#10;Added ajax call in setup.html.twig to readconfigAction&#10;Created function formatColRow to reuse code&#10;Added formating for pagelock div and displayloadingicon div&#10;Added pleasewait.svg to img_UYBG directory&#10;Moved pleasewait icon display to be on main map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added readconfigAction&#10;Modified saveconfigAction&#10;Added Jquery OnDocument start and stop ajax event&#10;Added pagelock and displayloadingicon to setup page&#10;Added ajax call in setup.html.twig to readconfigAction&#10;Created function formatColRow to reuse code&#10;Added formating for pagelock div and displayloadingicon div&#10;Added pleasewait.svg to img_UYBG directory&#10;Moved pleasewait icon display to be on main map" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
