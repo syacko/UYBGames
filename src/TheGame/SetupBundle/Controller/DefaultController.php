@@ -56,12 +56,8 @@ class DefaultController extends FOSRestController
         $tileConfigData = json_decode($request->getContent(), true);
 
         $logger = $this->get('logger');
-        $logger->info('START === START ========================================');
-        $logger->info('========================================================');
-        $logger->info('========================================================');
-        $logger->info('========================================================');
-        $logger->info('==> Tile Config Data (mapid): ' . $tileConfigData['mapid']);
-        $logger->info('==> Tile Config Data (col/row): ' . $tileConfigData['colrow']);
+        $logger->info('CODE LOCATION: ' . __FUNCTION__ . ':' . __CLASS__);
+        $logger->info('==> Tile Config Data (mapid): ' . $tileConfigData['mapid'] . ' (col/row): ' . $tileConfigData['colrow']);
 
         $em = $this->getDoctrine()->getManager();
         $q = $em->createQuery('SELECT t.mapId FROM TheGameMapsBundle:Tiles t WHERE t.mapId = :mapid AND t.tileColRow = :colrow');
@@ -84,11 +80,47 @@ class DefaultController extends FOSRestController
             $logger->info('=== UPDATE === RECS UPDATED: ' . $numUpdated . ' =========================');
         }
         $em->flush();
-        $logger->info('DONE === DONE === DONE =================================');
 
         $view = $this->view($request, 200)
             ->setTemplate("TheGameSetupBundle:Default:saveconfig.html.twig")
             ->setData($request);
+
+        return $this->handleView($view);
+    }
+
+    /**
+     * Read tile configuration data
+     *
+     * @Route("/readconfig", name="setup_readconfig")
+     * @Method({"GET", "POST"})
+     */
+    public function readconfigAction(Request $request)
+    {
+        $tileConfigData = json_decode($request->getContent(), true);
+
+        $logger = $this->get('logger');
+        $logger->info('CODE LOCATION: ' . __FUNCTION__ . ':' . __CLASS__);
+        $logger->info('$request->getContent(): ' . $request->getContent());
+        $logger->info('==> Tile Config Data (mapid): ' . $tileConfigData['mapid'] . ' (col/row): ' . $tileConfigData['colrow']);
+
+        $em = $this->getDoctrine()->getManager();
+        $q = $em->createQuery('SELECT t.tileData FROM TheGameMapsBundle:Tiles t WHERE t.mapId = :mapid AND t.tileColRow = :colrow');
+        $q->setParameter('mapid', $tileConfigData['mapid']);
+        $q->setParameter('colrow', $tileConfigData['colrow']);
+        $sqlResult = $q->getResult();
+        if (count($sqlResult, COUNT_RECURSIVE) < 1) {
+            $view = $this->view($request, 404)
+                ->setTemplate("TheGameSetupBundle:Default:saveconfig.html.twig")
+                ->setData($request);
+            $logger->info('=== Not Found === Code: 404 ===========================');
+        } else {
+            $view = $this->view($request, 302)
+                ->setTemplate("TheGameSetupBundle:Default:saveconfig.html.twig")
+                ->setData(json_encode($sqlResult));
+            $logger->info('=== Found === Code: 302 =++++==========================');
+        }
+        $em->flush();
+
 
         return $this->handleView($view);
     }
