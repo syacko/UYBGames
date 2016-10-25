@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6813a132-eb5c-4b59-a8f8-beb23f690ff1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/configdata.html.twig" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/saveconfig.html.twig" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" afterPath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
     </list>
     <ignored path="UYBGames.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,36 +43,24 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
+            <state relative-caret-position="1665">
+              <caret line="121" column="16" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="38" />
               <folding>
                 <element signature="e#50#107#0#PHP" expanded="true" />
-                <marker date="1476494226000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
-                <marker date="1476494226000" expanded="true" signature="2166:2261" ph="SELECT t.map... TheGameMapsBundle" />
-                <marker date="1476494226000" expanded="true" signature="2881:2992" ph="UPDATE TheGa... " />
-                <marker date="1476494226000" expanded="true" signature="4273:4371" ph="SELECT t.map... TheGameMapsBundle" />
+                <marker date="1476676363000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
+                <marker date="1476676363000" expanded="true" signature="2382:2477" ph="SELECT t.map... TheGameMapsBundle" />
+                <marker date="1476676363000" expanded="true" signature="3097:3208" ph="UPDATE TheGa... " />
+                <marker date="1476676363000" expanded="true" signature="4705:4803" ph="SELECT t.map... TheGameMapsBundle" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setup.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2439">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding>
-                <element signature="e#4391#4449#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="thegame.less" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/css_library/thegame.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="294" column="0" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+            <state relative-caret-position="474">
+              <caret line="565" column="21" selection-start-line="565" selection-start-column="21" selection-end-line="565" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -79,16 +71,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
               <caret line="32" column="21" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="saveconfig.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/saveconfig.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -178,12 +160,12 @@
         <option value="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/maps/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/saveconfig.html.twig" />
         <option value="$PROJECT_DIR$/src/TheGame/MapsBundle/Resources/config/doctrine/Tiles.orm.xml" />
-        <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/web/img/pleasewait.svg" />
-        <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
         <option value="$PROJECT_DIR$/web/css_library/thegame.less" />
+        <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/saveconfig.html.twig" />
+        <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
       </list>
     </option>
   </component>
@@ -298,6 +280,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -692,7 +675,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -700,7 +682,7 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/img/UYBG_img" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="136" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="161" />
@@ -841,14 +823,10 @@
       <workItem from="1475035592681" duration="38365000" />
       <workItem from="1475775566408" duration="11000" />
       <workItem from="1475775587017" duration="1067000" />
-      <workItem from="1475855266496" duration="19520000" />
-    </task>
-    <task id="LOCAL-00006" summary="Update to include the TheGame:MapBundle controller">
-      <created>1459532243645</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1459532243645</updated>
+      <workItem from="1475855266496" duration="27933000" />
+      <workItem from="1477072471888" duration="117000" />
+      <workItem from="1477366813676" duration="60000" />
+      <workItem from="1477366889863" duration="9084000" />
     </task>
     <task id="LOCAL-00007" summary="Created MapsBundle">
       <created>1459532724668</created>
@@ -1186,38 +1164,45 @@
       <option name="project" value="LOCAL" />
       <updated>1476494398646</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added readconfigAction&#10;Modified saveconfigAction&#10;Added Jquery OnDocument start and stop ajax event&#10;Added pagelock and displayloadingicon to setup page&#10;Added ajax call in setup.html.twig to readconfigAction&#10;Created function formatColRow to reuse code&#10;Added formating for pagelock div and displayloadingicon div&#10;Added pleasewait.svg to img_UYBG directory&#10;Moved pleasewait icon display to be on main map">
+      <created>1476494434702</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1476494434702</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163810000" />
+    <option name="totallyTimeSpent" value="181484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37484738" sideWeight="0.4904988" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2863248" sideWeight="0.4904988" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265086" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969475" sideWeight="0.49524942" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33405173" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.27077562" sideWeight="0.50950116" order="2" side_tool="true" content_ui="tabs" x="722" y="349" width="391" height="422" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39870688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74316293" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39870688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -1560,14 +1545,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/saveconfig.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/img/UYBG_img/pleasewait.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="3062" selection-start-line="0" selection-start-column="3062" selection-end-line="0" selection-end-column="3062" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css_library/thegame.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="294" column="0" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/configdata.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1665">
+          <caret line="121" column="16" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="38" />
+          <folding>
+            <element signature="e#50#107#0#PHP" expanded="true" />
+            <marker date="1476676363000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
+            <marker date="1476676363000" expanded="true" signature="2382:2477" ph="SELECT t.map... TheGameMapsBundle" />
+            <marker date="1476676363000" expanded="true" signature="3097:3208" ph="UPDATE TheGa... " />
+            <marker date="1476676363000" expanded="true" signature="4705:4803" ph="SELECT t.map... TheGameMapsBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="565" column="21" selection-start-line="565" selection-start-column="21" selection-end-line="565" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1576,54 +1602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="21" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/img/UYBG_img/pleasewait.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3062" selection-start-line="0" selection-start-column="3062" selection-end-line="0" selection-end-column="3062" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
-          <folding>
-            <element signature="e#50#107#0#PHP" expanded="true" />
-            <marker date="1476494226000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
-            <marker date="1476494226000" expanded="true" signature="2166:2261" ph="SELECT t.map... TheGameMapsBundle" />
-            <marker date="1476494226000" expanded="true" signature="2881:2992" ph="UPDATE TheGa... " />
-            <marker date="1476494226000" expanded="true" signature="4273:4371" ph="SELECT t.map... TheGameMapsBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2439">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#4391#4449#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css_library/thegame.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="294" column="0" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
           <folding />
         </state>
       </provider>

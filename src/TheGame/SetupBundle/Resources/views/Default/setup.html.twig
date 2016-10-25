@@ -258,7 +258,7 @@
         </div>
         <script>
 
-            var miniWidth = 375, miniHeight = 175, borderWidth = 10, displayBorderColor = "#50a8d5", gridWidth = 25;
+            var miniWidth = 375, miniHeight = 175, borderWidth = 10, displayBorderColor = "#50a8d5", gridWidth = 25, turquoise = "#33ffff";
             var myMiniMap = new MiniMap();
             myMiniMap.performAction("init", "/MapsMaster-001.jpg");
             //
@@ -307,7 +307,7 @@
                         default:
                             alert("MiniMap has been called with invalid action. [" + action + "]")
                     }
-                };
+                }
 
                 this.buildMiniSVGBorder = function () {
                     //Create miniMapSVG
@@ -373,7 +373,6 @@
                 arguments.callee._singletonInstance = this;
 
                 this.performAction = function (action, rectID, mapName) {
-
                     switch (action) {
                         case "init":
                             //Create mainMapSVG and Border
@@ -391,35 +390,36 @@
                                     .attr("fill", "black");
                             break;
                         case "main":
+                            // Set Sector Selected value.
                             var xy = rectID.split("/");
-
                             var mySelectedSector = document.getElementById("selectedSector");
                             mySelectedSector.innerText = "Sector Selected: Col=" + xy[1] + " Row=" + xy[2];
 
+                            // Construct the Main Map
+                            this.reconstructMainMapDiv();
+                            //Create mainMapSVG and Border
+                            var mainMapSVG = this.buildMainSVGBorder();
+                            //Load Image into mainMap
+                            var shortMapName = mapName.substr(0, mapName.length - 4);
+                            this.buildMainImage(mainMapSVG, "{{ imgLibrary }}" + shortMapName + "-" + xy[1] + "-" + xy[2] + ".jpg");
+                            //Build Main Map Grid
+                            this.buildMainGrid(mainMapSVG);
+
+                            // Get Tile Data
                             var tileData = new Object();
                             formatColRow(tileData);
                             jsonTileData = JSON.stringify(tileData);
                             var jqxhr = $.post("http://mybitnami:8000/setup/readconfig", jsonTileData.toString(), function (reply) {
-                                alert("success: " + reply);
+                                var configData = JSON.parse(htmlEntities(reply));
+                                for (index = 0; index < configData.length; index++) {
+                                    markPopulatedTile(mainMapSVG, "main" + "/" + configData[index]['cellcol'] + "/" + configData[index]['cellrow']);
+                                }
                             })
                                     .fail(function (jqxhr) {
-                                        alert("error:" + jqxhr.responseFields);
-                                    })
-//                        .always(function () {
-//                            alert("finished");
-//                        });
-
-                            this.reconstructMainMapDiv();
-
-                            //Create mainMapSVG and Border
-                            var mainMapSVG = this.buildMainSVGBorder();
-
-                            //Load Image into mainMap
-                            var shortMapName = mapName.substr(0, mapName.length - 4);
-                            this.buildMainImage(mainMapSVG, "{{ imgLibrary }}" + shortMapName + "-" + xy[1] + "-" + xy[2] + ".jpg");
-
-                            //Build Main Map Grid
-                            this.buildMainGrid(mainMapSVG);
+                                        if (!jqxhr.status == 404) {
+                                            alert("error:" + jqxhr.responseText);
+                                        }
+                                    });
                             break;
                         case "reset":
 
@@ -445,7 +445,7 @@
                         default:
                             alert("MainMap has been called with invalid action. [" + action + "]")
                     }
-                };
+                }
 
                 this.buildMainSVGBorder = function () {
                     //Create mainMapSVG
@@ -465,7 +465,7 @@
                             .attr("stroke", displayBorderColor)
                             .attr("stroke-width", borderWidth);
                     return mainMapSVG;
-                };
+                }
 
                 this.buildMainImage = function (mainMapSVG, fileName) {
                     mainMapSVG.append("image")
@@ -474,7 +474,7 @@
                             .attr("y", borderWidth / 2)
                             .attr("width", 500)
                             .attr("height", 500);
-                };
+                }
 
                 this.buildMainGrid = function (mainMapSVG) {
                     //Build the Main Map Grid
@@ -493,7 +493,7 @@
                                     });
                         }
                     }
-                };
+                }
 
                 this.reconstructMainMapDiv = function () {
                     //Replace HTML Div Main Map
@@ -539,6 +539,21 @@
                 tileData['mapid'] = mapId;
                 tileData['colrow'] = mySSColRow[1].toString() + ' ' + mySSColRow[2].toString();
             }
+            function htmlEntities(str) {
+                return String(str).replace(/&amp/g, '&;').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+            }
+            function markPopulatedTile(mainMapSVG, rectID) {
+                var elem = document.getElementById(rectID);
+                elem.setAttribute("stroke", turquoise);
+                elem.setAttribute("populated", "yes");
+                var xy = rectID.split("/");
+                mainMapSVG.append("path")
+                        .attr("id", "path/" + xy[1] + "/" + xy[2])
+                        .attr('d', 'M ' + (xy[1] * 25 + borderWidth / 2) + ' ' + (xy[2] * 25 + borderWidth / 2) + ' l 25 25')
+                        .attr('stroke-width', 2)
+                        .attr('stroke', turquoise);
+            }
+
             $("#saveConfig").button().click(function () {
                 var mapLocations = new Array(), ptr = 0;
                 for (r = 0; r < 20; r++) {
@@ -560,9 +575,9 @@
                         .fail(function () {
                             alert("error");
                         })
-//                        .always(function () {
-//                            alert("finished");
-//                        });
+                        .always(function () {
+                            alert("Changes Saved");
+                        })
             });
 
         </script>
