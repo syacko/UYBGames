@@ -30,7 +30,7 @@
                     mapData = mapIdName.split(':');
                     mapId = mapData[0];
                     myMiniMap.performAction("main", mapData[1]);
-                    $("#saveConfig").button("disable");
+                    $("#applyConfig").button("disable");
                 }
             });
             $("#landGrant").selectmenu("option", "width", 230);
@@ -105,8 +105,8 @@
                 }
             });
 
-            $("#saveConfig").button();
-            $("#saveConfig").button("disable");
+            $("#applyConfig").button();
+            $("#applyConfig").button("disable");
         });
     </script>
     <div id="pagelock">
@@ -148,26 +148,37 @@
             <div id="minimapinstruction" class="divborder">
                 <p class="UYBGFont_1em" style="margin: 2px 4px 2px 4px;">Legend</p>
                 <div style="width: 100%">
-                    <svg width="100%" height="100px">
-                        <rect x="0" y="0" width="40" height="100" fill="black"></rect>
-                        <rect x="10" y="10" width="25" height="25" stroke="#33ffff" fill="none"></rect>
+                    <svg width="100%" height="75px">
+                        <rect x="0" y="0" width="45" height="75" fill="#663300"></rect> {#Brown#}
+                        <rect x="10" y="10" width="25" height="25" stroke="#33ffff" fill="#33ffff"
+                              style="fill-opacity: 0.5"></rect>
                         <text x="50" y="25" class="UYBGFont_075em">
-                            Previously configurated grid. No Changes saved.
+                            Previously configurated grid. You have to mark
+                        </text>
+                        <text x="50" y=38 class="UYBGFont_075em">
+                            grid to change.
                         </text>
                         <rect x="10" y="40" width="25" height="25" stroke="yellow" fill="none"></rect>
-                        <text x="50" y="50" class="UYBGFont_075em">
-                            Marked to have properties selected
-                        </text>
-                        <text x="50" y="65" class="UYBGFont_075em">
-                            below when saved.
+                        <text x="50" y="60" class="UYBGFont_075em">
+                            Properties will be applied to Grid when applied.
                         </text>
                     </svg>
                     <p class="UYBGFont_1em" style="margin: 2px 4px 2px 4px;">Instructions</p>
-                    <p class="UYBGFont_075em" style="margin: 2px 4px 2px 4px;">
-                        1) Select the Mar's Land Grant.<br>
-                        2) Select the sector you're configuring from the mini-map above.<br>
-                        3) Click on the sector map to the right and select the properties from the panel below.<br>
-                        4) Save and repeat until the sector is complete.
+                    <p class="UYBGFont_080em" style="margin: 2px 4px 2px 4px;">
+                        &ndash; Select the Mar's Land Grant to be config'ed.<br>
+                    </p>
+                    <p class="UYBGFont_080em" style="margin: 2px 4px 2px 4px;">
+                        &ndash; Click sector on the mini-map.<br>
+                    </p>
+                    <p class="UYBGFont_080em" style="margin: 2px 4px 2px 4px;">
+                        &ndash; On the sector map (Right), click grid and select &nbsp;&nbsp;&nbsp;&nbsp;properties
+                        (Panel below).<br>
+                    </p>
+                    <p class="UYBGFont_080em" style="margin: 2px 4px 2px 4px;">
+                        &ndash; Click "Apply Config" and repeat until done.<br>
+                    </p>
+                    <p class="UYBGFont_080em" style="margin: 2px 4px 2px 4px;">
+                        &ndash; When the sector is done, click "Commit Config".
                     </p>
                 </div>
             </div>
@@ -252,7 +263,7 @@
                     <input type="checkbox" name="checkbox-6" id="checkbox-6" style="margin-bottom: 10px;"><span
                             class="UYBGFont_1em">Frozen CO2</span><br>
                 </fieldset>
-                <button id="saveConfig" class="ui-button ui-widget ui-corner-all">Save Configuration</button>
+                <button id="applyConfig" class="ui-button ui-widget ui-corner-all">Apply Config</button>
 
             </div>
             <div id="tabs-2">
@@ -560,7 +571,7 @@
             }
 
             function activateSave() {
-//                $("#saveConfig").button("enable");
+//                $("#applyConfig").button("enable");
             }
 
             function mapLoc(row, col, config) {
@@ -615,7 +626,7 @@
                 }
             }
 
-            $("#saveConfig").button().click(function () {
+            $("#applyConfig").button().click(function () {
                 var mapLocations = new Array(), ptr = 0;
                 for (r = 0; r < 20; r++) {
                     for (c = 0; c < 20; c++) {
@@ -630,7 +641,7 @@
                 formatColRow(tileData);
                 tileData['configdata'] = mapLocations;
                 jsonTileData = JSON.stringify(tileData);
-                var jqxhr = $.post("http://mybitnami:8000/setup/saveconfig", jsonTileData.toString(), function (reply) {
+                var jqxhr = $.post("http://mybitnami:8000/setup/saveConfig", jsonTileData.toString(), function (reply) {
                     alert("success: " + reply);
                 })
                         .fail(function () {

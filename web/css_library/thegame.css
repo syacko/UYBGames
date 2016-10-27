@@ -163,6 +163,28 @@ li.ui-menu-item:before {
   font-size: 0.75em;
   text-align: center;
 }
+
+.UYBGFont_080em {
+  font-family: Orbitron, "serif";
+  font-size: 0.80em;
+}
+
+.UYBGFont_080em_AlignCenter {
+  font-family: Orbitron, "serif";
+  font-size: 0.80em;
+  text-align: center;
+}
+
+.UYBGFont_090em {
+  font-family: Orbitron, "serif";
+  font-size: 0.90em;
+}
+
+.UYBGFont_090em_AlignCenter {
+  font-family: Orbitron, "serif";
+  font-size: 0.90em;
+  text-align: center;
+}
 .UYBGFont_1em {
   font-family: Orbitron, "serif";
   font-size: 1em;
@@ -231,23 +253,23 @@ li.ui-menu-item:before {
   margin-top: 5px;
 }
 #pagelock {
-    display: none;
-    margin: 0;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+  display: none;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }
 #displayloadingicon {
-    display: block;
-    margin: auto;
-    position: fixed;
-    top: 40%;
-    left: 40%;
-    width: 125px;
-    height: 125px;
-    z-index: 1000;
+  display: block;
+  margin: auto;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  width: 125px;
+  height: 125px;
+  z-index: 1000;
 }
 .lockpage {
-    display: block;
+  display: block;
 }
