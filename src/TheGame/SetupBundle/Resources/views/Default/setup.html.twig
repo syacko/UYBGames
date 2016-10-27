@@ -146,7 +146,30 @@
                 </div>
             </div>
             <div id="minimapinstruction" class="divborder">
-                <p class="UYBGFont_075em" style="margin: 2px 4px 2px 4px;">Instructions go here</p>
+                <p class="UYBGFont_1em" style="margin: 2px 4px 2px 4px;">Legend</p>
+                <div style="width: 100%">
+                    <svg width="100%" height="100px">
+                        <rect x="0" y="0" width="40" height="100" fill="black"></rect>
+                        <rect x="10" y="10" width="25" height="25" stroke="#33ffff" fill="none"></rect>
+                        <text x="50" y="25" class="UYBGFont_075em">
+                            Previously configurated grid. No Changes saved.
+                        </text>
+                        <rect x="10" y="40" width="25" height="25" stroke="yellow" fill="none"></rect>
+                        <text x="50" y="50" class="UYBGFont_075em">
+                            Marked to have properties selected
+                        </text>
+                        <text x="50" y="65" class="UYBGFont_075em">
+                            below when saved.
+                        </text>
+                    </svg>
+                    <p class="UYBGFont_1em" style="margin: 2px 4px 2px 4px;">Instructions</p>
+                    <p class="UYBGFont_075em" style="margin: 2px 4px 2px 4px;">
+                        1) Select the Mar's Land Grant.<br>
+                        2) Select the sector you're configuring from the mini-map above.<br>
+                        3) Click on the sector map to the right and select the properties from the panel below.<br>
+                        4) Save and repeat until the sector is complete.
+                    </p>
+                </div>
             </div>
         </div>
         {# Main Map Section #}
@@ -354,10 +377,8 @@
                                     .attr("stroke", "antiquewhite")
                                     .attr("id", "mini" + "/" + rectX + "/" + rectY)
                                     .on("click", function () {
-
                                         var myMainMap = new MainMap();
                                         myMainMap.performAction("main", this.id, mapName);
-                                        $("#saveConfig").button("enable");
                                     });
                         }
                     }
@@ -390,10 +411,8 @@
                                     .attr("fill", "black");
                             break;
                         case "main":
-                            // Set Sector Selected value.
                             var xy = rectID.split("/");
-                            var mySelectedSector = document.getElementById("selectedSector");
-                            mySelectedSector.innerText = "Sector Selected: Col=" + xy[1] + " Row=" + xy[2];
+                            setSectorSelectedLabel(xy);
 
                             // Construct the Main Map
                             this.reconstructMainMapDiv();
@@ -406,23 +425,10 @@
                             this.buildMainGrid(mainMapSVG);
 
                             // Get Tile Data
-                            var tileData = new Object();
-                            formatColRow(tileData);
-                            jsonTileData = JSON.stringify(tileData);
-                            var jqxhr = $.post("http://mybitnami:8000/setup/readconfig", jsonTileData.toString(), function (reply) {
-                                var configData = JSON.parse(htmlEntities(reply));
-                                for (index = 0; index < configData.length; index++) {
-                                    markPopulatedTile(mainMapSVG, "main" + "/" + configData[index]['cellcol'] + "/" + configData[index]['cellrow']);
-                                }
-                            })
-                                    .fail(function (jqxhr) {
-                                        if (!jqxhr.status == 404) {
-                                            alert("error:" + jqxhr.responseText);
-                                        }
-                                    });
+                            getTileData(mainMapSVG);
                             break;
                         case "reset":
-
+                            setSectorSelectedLabel("reset");
                             var mySelectedSector = document.getElementById("selectedSector");
                             mySelectedSector.innerText = "Sector Selected: None";
 
@@ -489,7 +495,7 @@
                                     .attr("id", "main" + "/" + rectX + "/" + rectY)
                                     .on("click", function () {
                                         var myMainMap = new MainMap();
-                                        myMainMap.markTile(this.id, mainMapSVG);
+                                        myMainMap.markGridForConfig(this.id, mainMapSVG);
                                     });
                         }
                     }
@@ -504,54 +510,109 @@
                     document.getElementById("mainmapsection").appendChild(div);
                 }
 
-                this.markTile = function (rectID, mainMapSVG) {
-                    var xy = rectID.split("/");
-
+                this.markGridForConfig = function (rectID, mainMapSVG) {
                     var elem = document.getElementById(rectID);
-                    if (elem.getAttribute("marked") != null) {
-                        elem.removeAttribute("stroke", "yellow");
+                    if (elem.getAttribute("marked") == "yes") {
                         elem.removeAttribute("marked");
-                        var elem = document.getElementById("path/" + xy[1] + "/" + xy[2]);
-                        elem.parentNode.removeChild(elem);
+                        if (elem.getAttribute("populated") == "yes") {
+                            markGrid(rectID, "populate");
+                        } else {
+                            markGrid(rectID, "clear");
+                        }
                     } else {
-                        elem.setAttribute("stroke", "yellow");
                         elem.setAttribute("marked", "yes");
-                        mainMapSVG.append("path")
-                                .attr("id", "path/" + xy[1] + "/" + xy[2])
-                                .attr('d', 'M ' + (xy[1] * 25 + borderWidth / 2) + ' ' + (xy[2] * 25 + borderWidth / 2) + ' l 25 25')
-                                .attr('stroke-width', 2)
-                                .attr('stroke', 'yellow')
-                                .on("click", function () {
-                                    var myMainMap = new MainMap();
-                                    myMainMap.markTile(rectID, mainMapSVG);
-                                });
+                        markGrid(rectID, "mark");
                     }
                 }
             }
+            function setSectorSelectedLabel(xy) {
+                var mySelectedSector = document.getElementById("selectedSector");
+                if (xy == 'reset') {
+                    mySelectedSector.innerText = "Sector Selected: None";
+                } else {
+                    mySelectedSector.innerText = "Sector Selected: Col=" + xy[1] + " Row=" + xy[2];
+                }
+            }
+
+            function getTileData(mainMapSVG) {
+                var tileData = new Object();
+                formatColRow(tileData);
+                jsonTileData = JSON.stringify(tileData);
+                var jqxhr = $.post("http://mybitnami:8000/setup/readconfig", jsonTileData.toString(), function (reply) {
+                    var configData = JSON.parse(htmlEntities(reply));
+                    for (index = 0; index < configData.length; index++) {
+                        addDataToGrid("main" + "/" + configData[index]['cellcol'] + "/" + configData[index]['cellrow'],
+                                configData[index]['cellconfig']['buildable'],
+                                configData[index]['cellconfig']['smins'],
+                                configData[index]['cellconfig']['subsmins'],
+                                configData[index]['cellconfig']['magmins'],
+                                configData[index]['cellconfig']['water'],
+                                configData[index]['cellconfig']['co2']
+                        );
+                        markGrid("main" + "/" + configData[index]['cellcol'] + "/" + configData[index]['cellrow'], "populate");
+                    }
+                })
+                        .fail(function (jqxhr) {
+                            if (!jqxhr.status == 404) {
+                                alert("error:" + jqxhr.responseText);
+                            }
+                        });
+            }
+
+            function activateSave() {
+//                $("#saveConfig").button("enable");
+            }
+
             function mapLoc(row, col, config) {
                 this.cellrow = row;
                 this.cellcol = col;
                 this.cellconfig = config;
             }
+
             function formatColRow(tileData) {
                 var mySelectedSector = document.getElementById("selectedSector").innerText.split(":");
                 var mySSColRow = mySelectedSector[1].toString().replace(",", "").replace(",", "").split(" ");
                 tileData['mapid'] = mapId;
                 tileData['colrow'] = mySSColRow[1].toString() + ' ' + mySSColRow[2].toString();
             }
+
             function htmlEntities(str) {
                 return String(str).replace(/&amp/g, '&;').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
             }
-            function markPopulatedTile(mainMapSVG, rectID) {
+
+            function addDataToGrid(rectID, buildable, smins, subsmins, magmins, water, co2) {
                 var elem = document.getElementById(rectID);
-                elem.setAttribute("stroke", turquoise);
                 elem.setAttribute("populated", "yes");
-                var xy = rectID.split("/");
-                mainMapSVG.append("path")
-                        .attr("id", "path/" + xy[1] + "/" + xy[2])
-                        .attr('d', 'M ' + (xy[1] * 25 + borderWidth / 2) + ' ' + (xy[2] * 25 + borderWidth / 2) + ' l 25 25')
-                        .attr('stroke-width', 2)
-                        .attr('stroke', turquoise);
+                elem.setAttribute("buildable", buildable);
+                elem.setAttribute("smins", smins);
+                elem.setAttribute("subsmins", subsmins);
+                elem.setAttribute("magmins", magmins);
+                elem.setAttribute("water", water);
+                elem.setAttribute("co2", co2);
+            }
+
+            function markGrid(rectID, markType) {
+                var elem = document.getElementById(rectID);
+                switch (markType) {
+                    case "mark":
+                        elem.setAttribute("stroke", "yellow");
+                        elem.setAttribute("stroke-width", 2);
+                        elem.setAttribute("style", "fill-opacity: 0.0");
+                        break;
+                    case "populate":
+                        elem.setAttribute("stroke", turquoise);
+                        elem.setAttribute("stroke-width", 2);
+                        elem.setAttribute("fill", turquoise);
+                        elem.setAttribute("style", "fill-opacity: 0.5");
+                        break;
+                    case "clear":
+                        elem.removeAttribute("stroke");
+                        elem.removeAttribute("stroke-width");
+                        elem.setAttribute("style", "fill-opacity: 0.0");
+                        break;
+                    default:
+                        alert("Invalid markType passed to markGrid. [" + markType + "]")
+                }
             }
 
             $("#saveConfig").button().click(function () {
@@ -579,7 +640,6 @@
                             alert("Changes Saved");
                         })
             });
-
         </script>
         {% endspaceless %}
 {% endblock %}
