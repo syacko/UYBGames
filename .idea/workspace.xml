@@ -4,8 +4,6 @@
     <list default="true" id="6813a132-eb5c-4b59-a8f8-beb23f690ff1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" afterPath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.css" afterPath="$PROJECT_DIR$/web/css_library/thegame.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.less" afterPath="$PROJECT_DIR$/web/css_library/thegame.less" />
     </list>
     <ignored path="UYBGames.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,48 +62,48 @@
       <file leaf-file-name="setup.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="258" column="111" selection-start-line="258" selection-start-column="111" selection-end-line="258" selection-end-column="111" />
+            <state relative-caret-position="253">
+              <caret line="552" column="63" selection-start-line="552" selection-start-column="63" selection-end-line="552" selection-end-column="63" />
               <folding>
-                <element signature="e#4394#4452#0#HTML" expanded="true" />
-                <element signature="e#4530#4628#0#HTML" expanded="true" />
-                <element signature="e#5971#6003#0#HTML" expanded="true" />
-                <element signature="e#6036#6055#0#HTML" expanded="true" />
-                <element signature="e#6307#6332#0#HTML" expanded="true" />
-                <element signature="e#7009#7041#0#HTML" expanded="true" />
-                <element signature="e#7105#7137#0#HTML" expanded="true" />
-                <element signature="e#7163#7170#0#HTML" expanded="true" />
-                <element signature="e#7291#7323#0#HTML" expanded="true" />
-                <element signature="e#7349#7356#0#HTML" expanded="true" />
-                <element signature="e#7462#7494#0#HTML" expanded="true" />
-                <element signature="e#7520#7527#0#HTML" expanded="true" />
-                <element signature="e#7577#7583#0#HTML" expanded="true" />
-                <element signature="e#7583#7589#0#HTML" expanded="true" />
-                <element signature="e#7589#7595#0#HTML" expanded="true" />
-                <element signature="e#7595#7601#0#HTML" expanded="true" />
-                <element signature="e#7702#7734#0#HTML" expanded="true" />
-                <element signature="e#7760#7767#0#HTML" expanded="true" />
-                <element signature="e#7887#7919#0#HTML" expanded="true" />
-                <element signature="e#7945#7952#0#HTML" expanded="true" />
-                <element signature="e#8178#8223#0#HTML" expanded="true" />
-                <element signature="e#8366#8400#0#HTML" expanded="true" />
-                <element signature="e#8440#8474#0#HTML" expanded="true" />
-                <element signature="e#8528#8560#0#HTML" expanded="true" />
-                <element signature="e#8608#8634#0#HTML" expanded="true" />
-                <element signature="e#8759#8791#0#HTML" expanded="true" />
-                <element signature="e#8839#8865#0#HTML" expanded="true" />
-                <element signature="e#9051#9075#0#HTML" expanded="true" />
-                <element signature="e#9158#9202#0#HTML" expanded="true" />
-                <element signature="e#9630#9664#0#HTML" expanded="true" />
-                <element signature="e#9743#9771#0#HTML" expanded="true" />
-                <element signature="e#9827#9855#0#HTML" expanded="true" />
-                <element signature="e#9958#9986#0#HTML" expanded="true" />
-                <element signature="e#10193#10218#0#HTML" expanded="true" />
-                <element signature="e#11003#11031#0#HTML" expanded="true" />
-                <element signature="e#12829#12857#0#HTML" expanded="true" />
-                <element signature="e#13058#13083#0#HTML" expanded="true" />
-                <element signature="e#13529#13557#0#HTML" expanded="true" />
-                <element signature="e#13714#13742#0#HTML" expanded="true" />
+                <element signature="e#5405#5463#0#HTML" expanded="true" />
+                <element signature="e#5541#5639#0#HTML" expanded="true" />
+                <element signature="e#6982#7014#0#HTML" expanded="true" />
+                <element signature="e#7047#7066#0#HTML" expanded="true" />
+                <element signature="e#7348#7373#0#HTML" expanded="true" />
+                <element signature="e#8050#8082#0#HTML" expanded="true" />
+                <element signature="e#8146#8178#0#HTML" expanded="true" />
+                <element signature="e#8204#8211#0#HTML" expanded="true" />
+                <element signature="e#8332#8364#0#HTML" expanded="true" />
+                <element signature="e#8390#8397#0#HTML" expanded="true" />
+                <element signature="e#8503#8535#0#HTML" expanded="true" />
+                <element signature="e#8561#8568#0#HTML" expanded="true" />
+                <element signature="e#8618#8624#0#HTML" expanded="true" />
+                <element signature="e#8624#8630#0#HTML" expanded="true" />
+                <element signature="e#8630#8636#0#HTML" expanded="true" />
+                <element signature="e#8636#8642#0#HTML" expanded="true" />
+                <element signature="e#8767#8799#0#HTML" expanded="true" />
+                <element signature="e#8825#8832#0#HTML" expanded="true" />
+                <element signature="e#8952#8984#0#HTML" expanded="true" />
+                <element signature="e#9010#9017#0#HTML" expanded="true" />
+                <element signature="e#9243#9288#0#HTML" expanded="true" />
+                <element signature="e#9431#9465#0#HTML" expanded="true" />
+                <element signature="e#9505#9539#0#HTML" expanded="true" />
+                <element signature="e#9593#9625#0#HTML" expanded="true" />
+                <element signature="e#9673#9699#0#HTML" expanded="true" />
+                <element signature="e#9824#9856#0#HTML" expanded="true" />
+                <element signature="e#9904#9930#0#HTML" expanded="true" />
+                <element signature="e#10116#10140#0#HTML" expanded="true" />
+                <element signature="e#10223#10267#0#HTML" expanded="true" />
+                <element signature="e#10695#10729#0#HTML" expanded="true" />
+                <element signature="e#10808#10836#0#HTML" expanded="true" />
+                <element signature="e#10892#10920#0#HTML" expanded="true" />
+                <element signature="e#11023#11051#0#HTML" expanded="true" />
+                <element signature="e#11258#11283#0#HTML" expanded="true" />
+                <element signature="e#12068#12096#0#HTML" expanded="true" />
+                <element signature="e#13894#13922#0#HTML" expanded="true" />
+                <element signature="e#14123#14148#0#HTML" expanded="true" />
+                <element signature="e#14594#14622#0#HTML" expanded="true" />
+                <element signature="e#14779#14807#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -873,14 +871,7 @@
       <workItem from="1477072471888" duration="117000" />
       <workItem from="1477366813676" duration="60000" />
       <workItem from="1477366889863" duration="17747000" />
-      <workItem from="1477518163726" duration="16712000" />
-    </task>
-    <task id="LOCAL-00009" summary="Added missing default value for map_playable.">
-      <created>1459533101513</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1459533101513</updated>
+      <workItem from="1477518163726" duration="18801000" />
     </task>
     <task id="LOCAL-00010" summary="Create Maps Entity and correct mapPlayable default value. It was generated as a string. Change it to a boolean.">
       <created>1459533534644</created>
@@ -1218,11 +1209,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477534958245</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Cleaned up Legend and Instruction section&#10;Added .UYBGFont_080em, .UYBGFont_90em css classes&#10;Added .UYBGFont_080em_AlignCenter, .UYBGFont_90em_AlignCenter css classes">
+      <created>1477537026133</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1477537026133</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206859000" />
+    <option name="totallyTimeSpent" value="208948000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="0" />
@@ -1270,7 +1268,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="Create the Tiles.orm.xml and update the tiles_playable definition to have the default value.&#10;Added the Apache 2.0 License file&#10;Added the README.MD file" />
     <MESSAGE value="Created the Tiles.php Entity&#10;Created the TilesType.php form for CRUD&#10;Created the index.html.twig, show.html.twig, new.html.twig and the edit.html.twig file for Tiles CRUD&#10;Created the TilesController.php for CRUD" />
     <MESSAGE value="Added jsLibrary and cssLibrary parameters to index.html.twig, new.html,twig, show.html.twig and edit.html.twig files&#10;Added TilesControllerTest.php to GIT." />
     <MESSAGE value="Reformat map:edit, index and new.html.twig&#10;Applied css to tiles:edit, index, new and show.html.twig" />
@@ -1295,7 +1292,8 @@
     <MESSAGE value="Added readconfigAction&#10;Modified saveconfigAction&#10;Added Jquery OnDocument start and stop ajax event&#10;Added pagelock and displayloadingicon to setup page&#10;Added ajax call in setup.html.twig to readconfigAction&#10;Created function formatColRow to reuse code&#10;Added formating for pagelock div and displayloadingicon div&#10;Added pleasewait.svg to img_UYBG directory&#10;Moved pleasewait icon display to be on main map" />
     <MESSAGE value="Added code to support loading saved configuration data" />
     <MESSAGE value="Refactor the code for marking populated and grids to be configurated.&#10;Changed the legend to match the marks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor the code for marking populated and grids to be configurated.&#10;Changed the legend to match the marks" />
+    <MESSAGE value="Cleaned up Legend and Instruction section&#10;Added .UYBGFont_080em, .UYBGFont_90em css classes&#10;Added .UYBGFont_080em_AlignCenter, .UYBGFont_90em_AlignCenter css classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up Legend and Instruction section&#10;Added .UYBGFont_080em, .UYBGFont_90em css classes&#10;Added .UYBGFont_080em_AlignCenter, .UYBGFont_90em_AlignCenter css classes" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1657,48 +1655,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="258" column="111" selection-start-line="258" selection-start-column="111" selection-end-line="258" selection-end-column="111" />
+        <state relative-caret-position="253">
+          <caret line="552" column="63" selection-start-line="552" selection-start-column="63" selection-end-line="552" selection-end-column="63" />
           <folding>
-            <element signature="e#4394#4452#0#HTML" expanded="true" />
-            <element signature="e#4530#4628#0#HTML" expanded="true" />
-            <element signature="e#5971#6003#0#HTML" expanded="true" />
-            <element signature="e#6036#6055#0#HTML" expanded="true" />
-            <element signature="e#6307#6332#0#HTML" expanded="true" />
-            <element signature="e#7009#7041#0#HTML" expanded="true" />
-            <element signature="e#7105#7137#0#HTML" expanded="true" />
-            <element signature="e#7163#7170#0#HTML" expanded="true" />
-            <element signature="e#7291#7323#0#HTML" expanded="true" />
-            <element signature="e#7349#7356#0#HTML" expanded="true" />
-            <element signature="e#7462#7494#0#HTML" expanded="true" />
-            <element signature="e#7520#7527#0#HTML" expanded="true" />
-            <element signature="e#7577#7583#0#HTML" expanded="true" />
-            <element signature="e#7583#7589#0#HTML" expanded="true" />
-            <element signature="e#7589#7595#0#HTML" expanded="true" />
-            <element signature="e#7595#7601#0#HTML" expanded="true" />
-            <element signature="e#7702#7734#0#HTML" expanded="true" />
-            <element signature="e#7760#7767#0#HTML" expanded="true" />
-            <element signature="e#7887#7919#0#HTML" expanded="true" />
-            <element signature="e#7945#7952#0#HTML" expanded="true" />
-            <element signature="e#8178#8223#0#HTML" expanded="true" />
-            <element signature="e#8366#8400#0#HTML" expanded="true" />
-            <element signature="e#8440#8474#0#HTML" expanded="true" />
-            <element signature="e#8528#8560#0#HTML" expanded="true" />
-            <element signature="e#8608#8634#0#HTML" expanded="true" />
-            <element signature="e#8759#8791#0#HTML" expanded="true" />
-            <element signature="e#8839#8865#0#HTML" expanded="true" />
-            <element signature="e#9051#9075#0#HTML" expanded="true" />
-            <element signature="e#9158#9202#0#HTML" expanded="true" />
-            <element signature="e#9630#9664#0#HTML" expanded="true" />
-            <element signature="e#9743#9771#0#HTML" expanded="true" />
-            <element signature="e#9827#9855#0#HTML" expanded="true" />
-            <element signature="e#9958#9986#0#HTML" expanded="true" />
-            <element signature="e#10193#10218#0#HTML" expanded="true" />
-            <element signature="e#11003#11031#0#HTML" expanded="true" />
-            <element signature="e#12829#12857#0#HTML" expanded="true" />
-            <element signature="e#13058#13083#0#HTML" expanded="true" />
-            <element signature="e#13529#13557#0#HTML" expanded="true" />
-            <element signature="e#13714#13742#0#HTML" expanded="true" />
+            <element signature="e#5405#5463#0#HTML" expanded="true" />
+            <element signature="e#5541#5639#0#HTML" expanded="true" />
+            <element signature="e#6982#7014#0#HTML" expanded="true" />
+            <element signature="e#7047#7066#0#HTML" expanded="true" />
+            <element signature="e#7348#7373#0#HTML" expanded="true" />
+            <element signature="e#8050#8082#0#HTML" expanded="true" />
+            <element signature="e#8146#8178#0#HTML" expanded="true" />
+            <element signature="e#8204#8211#0#HTML" expanded="true" />
+            <element signature="e#8332#8364#0#HTML" expanded="true" />
+            <element signature="e#8390#8397#0#HTML" expanded="true" />
+            <element signature="e#8503#8535#0#HTML" expanded="true" />
+            <element signature="e#8561#8568#0#HTML" expanded="true" />
+            <element signature="e#8618#8624#0#HTML" expanded="true" />
+            <element signature="e#8624#8630#0#HTML" expanded="true" />
+            <element signature="e#8630#8636#0#HTML" expanded="true" />
+            <element signature="e#8636#8642#0#HTML" expanded="true" />
+            <element signature="e#8767#8799#0#HTML" expanded="true" />
+            <element signature="e#8825#8832#0#HTML" expanded="true" />
+            <element signature="e#8952#8984#0#HTML" expanded="true" />
+            <element signature="e#9010#9017#0#HTML" expanded="true" />
+            <element signature="e#9243#9288#0#HTML" expanded="true" />
+            <element signature="e#9431#9465#0#HTML" expanded="true" />
+            <element signature="e#9505#9539#0#HTML" expanded="true" />
+            <element signature="e#9593#9625#0#HTML" expanded="true" />
+            <element signature="e#9673#9699#0#HTML" expanded="true" />
+            <element signature="e#9824#9856#0#HTML" expanded="true" />
+            <element signature="e#9904#9930#0#HTML" expanded="true" />
+            <element signature="e#10116#10140#0#HTML" expanded="true" />
+            <element signature="e#10223#10267#0#HTML" expanded="true" />
+            <element signature="e#10695#10729#0#HTML" expanded="true" />
+            <element signature="e#10808#10836#0#HTML" expanded="true" />
+            <element signature="e#10892#10920#0#HTML" expanded="true" />
+            <element signature="e#11023#11051#0#HTML" expanded="true" />
+            <element signature="e#11258#11283#0#HTML" expanded="true" />
+            <element signature="e#12068#12096#0#HTML" expanded="true" />
+            <element signature="e#13894#13922#0#HTML" expanded="true" />
+            <element signature="e#14123#14148#0#HTML" expanded="true" />
+            <element signature="e#14594#14622#0#HTML" expanded="true" />
+            <element signature="e#14779#14807#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

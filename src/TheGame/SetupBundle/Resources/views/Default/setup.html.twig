@@ -30,41 +30,58 @@
                     mapData = mapIdName.split(':');
                     mapId = mapData[0];
                     myMiniMap.performAction("main", mapData[1]);
-                    $("#applyConfig").button("disable");
+                    sectorSelected = false;
+                    checkApplyConfig();
                 }
             });
             $("#landGrant").selectmenu("option", "width", 230);
             $("#subtileconf").tabs();
             $('#checkbox-1').click(function () {
                 if (document.getElementById('checkbox-1').checked) {
+                    propertiesSelected++;
+                    checkApplyConfig();
                     configObj["buildable"] = 'n'
                 } else {
+                    propertiesSelected--;
+                    checkApplyConfig();
                     configObj["buildable"] = 'y'
                 }
             });
             $('#checkbox-2').click(function () {
                 if (document.getElementById('checkbox-2').checked) {
+                    propertiesSelected++;
+                    checkApplyConfig();
                     $("#surfaceminerials").selectmenu("enable");
                     configObj["smins"] = $("#surfaceminerials").val();
                 } else {
+                    propertiesSelected--;
+                    checkApplyConfig();
                     $("#surfaceminerials").selectmenu("disable");
                     configObj["smins"] = "none";
                 }
             });
             $('#checkbox-3').click(function () {
                 if (document.getElementById('checkbox-3').checked) {
+                    propertiesSelected++;
+                    checkApplyConfig();
                     $("#subsurfaceminerials").selectmenu("enable");
                     configObj["subsmins"] = $("#subsurfaceminerials").val();
                 } else {
+                    propertiesSelected--;
+                    checkApplyConfig();
                     $("#subsurfaceminerials").selectmenu("disable");
                     configObj["subsmins"] = "none";
                 }
             });
             $('#checkbox-4').click(function () {
                 if (document.getElementById('checkbox-4').checked) {
+                    propertiesSelected++;
+                    checkApplyConfig();
                     $("#magmaminerials").selectmenu("enable");
                     configObj["magmins"] = $("#magmaminerials").val();
                 } else {
+                    propertiesSelected--;
+                    checkApplyConfig();
                     $("#magmaminerials").selectmenu("disable");
                     configObj["magmins"] = "none";
                 }
@@ -92,15 +109,23 @@
             $("#magmaminerials").selectmenu("disable");
             $('#checkbox-5').click(function () {
                 if (document.getElementById('checkbox-5').checked) {
+                    propertiesSelected++;
+                    checkApplyConfig();
                     configObj["water"] = "y";
                 } else {
+                    propertiesSelected--;
+                    checkApplyConfig();
                     configObj["water"] = "n";
                 }
             });
             $('#checkbox-6').click(function () {
                 if (document.getElementById('checkbox-6').checked) {
+                    propertiesSelected++;
+                    checkApplyConfig();
                     configObj["co2"] = "y";
                 } else {
+                    propertiesSelected--;
+                    checkApplyConfig();
                     configObj["co2"] = "n";
                 }
             });
@@ -293,6 +318,7 @@
         <script>
 
             var miniWidth = 375, miniHeight = 175, borderWidth = 10, displayBorderColor = "#50a8d5", gridWidth = 25, turquoise = "#33ffff";
+            var sectorSelected = false, propertiesSelected = 0, gridSelected = 0;
             var myMiniMap = new MiniMap();
             myMiniMap.performAction("init", "/MapsMaster-001.jpg");
             //
@@ -388,6 +414,8 @@
                                     .attr("stroke", "antiquewhite")
                                     .attr("id", "mini" + "/" + rectX + "/" + rectY)
                                     .on("click", function () {
+                                        sectorSelected = true;
+                                        checkApplyConfig();
                                         var myMainMap = new MainMap();
                                         myMainMap.performAction("main", this.id, mapName);
                                     });
@@ -524,6 +552,8 @@
                 this.markGridForConfig = function (rectID, mainMapSVG) {
                     var elem = document.getElementById(rectID);
                     if (elem.getAttribute("marked") == "yes") {
+                        gridSelected--;
+                        checkApplyConfig();
                         elem.removeAttribute("marked");
                         if (elem.getAttribute("populated") == "yes") {
                             markGrid(rectID, "populate");
@@ -531,6 +561,8 @@
                             markGrid(rectID, "clear");
                         }
                     } else {
+                        gridSelected++;
+                        checkApplyConfig();
                         elem.setAttribute("marked", "yes");
                         markGrid(rectID, "mark");
                     }
@@ -570,8 +602,13 @@
                         });
             }
 
-            function activateSave() {
-//                $("#applyConfig").button("enable");
+
+            function checkApplyConfig() {
+                if (sectorSelected & propertiesSelected > 0 & gridSelected > 0) {
+                    $("#applyConfig").button("enable");
+                } else {
+                    $("#applyConfig").button("disable");
+                }
             }
 
             function mapLoc(row, col, config) {
