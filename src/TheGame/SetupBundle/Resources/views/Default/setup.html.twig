@@ -132,6 +132,10 @@
 
             $("#applyConfig").button();
             $("#applyConfig").button("disable");
+            $("#clearConfig").button();
+            $("#clearConfig").button("disable");
+            $("#resetSectorConfig").button();
+            $("#resetSectorConfig").button("disable");
             $("#commitConfig").button();
             $("#commitConfig").button("disable");
         });
@@ -304,6 +308,16 @@
                             </div>
                             <div class="divTableCell" style="align: center;">
                                 <p class="UYBGFont_1em">
+                                    When you click Clear, it will remove all previous configured data for the selected
+                                    cells.
+                                    Reset will clear the whole sector.
+                                </p>
+                                <button id="clearConfig" class="ui-button ui-widget ui-corner-all">Clear Config
+                                </button>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                <button id="resetSectorConfig" class="ui-button ui-widget ui-corner-all">Reset Sector
+                                </button>
+                                <p class="UYBGFont_1em">
                                     When you click the "Commit Config" button, it will save the previous configuration
                                     and the
                                     additions / changes for this sector.
@@ -440,6 +454,7 @@
                                     .on("click", function () {
                                         sectorSelected = true;
                                         checkApplyConfig();
+                                        checkresetSectorConfig();
                                         var myMainMap = new MainMap();
                                         myMainMap.performAction("main", this.id, mapName);
                                     });
@@ -578,6 +593,7 @@
                     if (elem.getAttribute("marked") == "yes") {
                         gridSelected--;
                         checkApplyConfig();
+                        checkClearConfig();
                         elem.removeAttribute("marked");
                         if (elem.getAttribute("populated") == "yes") {
                             markGrid(rectID, "populate");
@@ -587,6 +603,7 @@
                     } else {
                         gridSelected++;
                         checkApplyConfig();
+                        checkClearConfig();
                         elem.setAttribute("marked", "yes");
                         markGrid(rectID, "mark");
                     }
@@ -635,6 +652,22 @@
                 }
             }
 
+            function checkClearConfig() {
+                if (sectorSelected & gridSelected > 0) {
+                    $("#clearConfig").button("enable");
+                } else {
+                    $("#clearConfig").button("disable");
+                }
+            }
+
+            function checkresetSectorConfig() {
+                if (sectorSelected) {
+                    $("#resetSectorConfig").button("enable");
+                } else {
+                    $("#resetSectorConfig").button("disable");
+                }
+            }
+
             function mapLoc(row, col, config) {
                 this.cellrow = row;
                 this.cellcol = col;
@@ -663,6 +696,18 @@
                 elem.setAttribute("co2", co2);
             }
 
+            function removeDataFromGrid(rectID) {
+                var elem = document.getElementById(rectID);
+                elem.removeAttribute("populated");
+                elem.removeAttribute("buildable");
+                elem.removeAttribute("smins");
+                elem.removeAttribute("subsmins");
+                elem.removeAttribute("magmins");
+                elem.removeAttribute("water");
+                elem.removeAttribute("co2");
+                elem.removeAttribute("marked");
+            }
+
             function markGrid(rectID, markType) {
                 var elem = document.getElementById(rectID);
                 switch (markType) {
@@ -687,14 +732,56 @@
                 }
             }
 
+            function resetProperties() {
+                document.getElementById('checkbox-1').checked = false;
+                configObj["buildable"] = 'n'
+                document.getElementById('checkbox-2').checked = false;
+                $("#surfaceminerials").selectmenu("disable");
+                configObj["smins"] = "none";
+                document.getElementById('checkbox-3').checked = false;
+                $("#subsurfaceminerials").selectmenu("disable");
+                configObj["subsmins"] = "none";
+                document.getElementById('checkbox-4').checked = false;
+                $("#magmaminerials").selectmenu("disable");
+                configObj["magmins"] = "none";
+                $("#surfaceminerials").selectmenu("disable");
+                $("#subsurfaceminerials").selectmenu("disable");
+                $("#magmaminerials").selectmenu("disable");
+                document.getElementById('checkbox-5').checked = false;
+                configObj["water"] = "n";
+                document.getElementById('checkbox-6').checked = false;
+                configObj["co2"] = "n";
+                propertiesSelected = 0;
+                checkApplyConfig();
+            }
+
             $("#applyConfig").button().click(function () {
-//                $("#applyConfig").button("disable");
                 for (r = 0; r < 20; r++) {
                     for (c = 0; c < 20; c++) {
                         if (document.getElementById("main/" + c + "/" + r).getAttribute("marked")) {
                             addDataToGrid("main/" + c + "/" + r, configObj["buildable"], configObj["smins"], configObj["subsmins"], configObj["magmins"], configObj["water"], configObj["co2"]);
                             markGrid("main/" + c + "/" + r, "populate");
                         }
+                    }
+                }
+                $("#commitConfig").button("enable");
+            });
+            $("#clearConfig").button().click(function () {
+                for (r = 0; r < 20; r++) {
+                    for (c = 0; c < 20; c++) {
+                        if (document.getElementById("main/" + c + "/" + r).getAttribute("marked")) {
+                            removeDataFromGrid("main/" + c + "/" + r);
+                            markGrid("main/" + c + "/" + r, "clear");
+                        }
+                    }
+                }
+                $("#commitConfig").button("enable");
+            });
+            $("#resetSectorConfig").button().click(function () {
+                for (r = 0; r < 20; r++) {
+                    for (c = 0; c < 20; c++) {
+                        removeDataFromGrid("main/" + c + "/" + r);
+                        markGrid("main/" + c + "/" + r, "clear");
                     }
                 }
                 $("#commitConfig").button("enable");
@@ -716,6 +803,7 @@
                 tileData['configdata'] = mapLocations;
                 jsonTileData = JSON.stringify(tileData);
                 var jqxhr = $.post("http://mybitnami:8000/setup/saveconfig", jsonTileData.toString(), function (reply) {
+                    resetProperties();
                     alert("success: " + reply);
                 })
                         .fail(function () {
