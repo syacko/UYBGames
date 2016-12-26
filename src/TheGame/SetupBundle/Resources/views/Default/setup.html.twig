@@ -238,8 +238,8 @@
         <div id="subtileconf" class="UYBGFont_075em" style="float: right;height: 92%;width: 80%;">
             <ul>
                 <li class="removeIcon"><a href="#tabs-1" class="UYBGFont_1em_AlignCenter">Properties</a></li>
-                <li class="removeIcon"><a href="#tabs-2" class="UYBGFont_1em_AlignCenter">Proin dolor</a></li>
-                <li class="removeIcon"><a href="#tabs-3" class="UYBGFont_1em_AlignCenter">Aenean lacinia</a></li>
+                <li class="removeIcon"><a href="#tabs-2" class="UYBGFont_1em_AlignCenter">Settings</a></li>
+                <li class="removeIcon"><a href="#tabs-3" class="UYBGFont_1em_AlignCenter">Sector Analysis</a></li>
             </ul>
             <div id="tabs-1">
                 <div class="divTable">
@@ -330,13 +330,16 @@
                 </div>
             </div>
             <div id="tabs-2">
-                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id
-                    nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros
-                    molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula
-                    in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis.
-                    Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat.
-                    Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod
-                    felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+                <div class="divTableCell" style="width: 55%">
+                    <fieldset style="border: none; margin: 0px;">
+                        <input type="checkbox" name="checkbox-DG" id="checkbox-DG">
+                        <span class="UYBGFont_1em" style="margin-bottom: 15px;">Display Grid Details</span><br>
+                        <input type="checkbox" name="checkbox-DGOC" id="checkbox-DGOC"
+                               style="margin-left: 20px; margin-bottom: 10px;"
+                               onclick="$('#checkbox-DG').prop('checked', true);">
+                        <span class="UYBGFont_1em" style="margin-bottom: 15px;">Only Configured Grids</span><br>
+                    </fieldset>
+                </div>
             </div>
             <div id="tabs-3">
                 <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel
@@ -352,6 +355,10 @@
                     rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus
                     hendrerit hendrerit.</p>
             </div>
+        </div>
+        <div id="configDetails">
+            ...popup content...
+            <button class="configDetails_close">Close</button>
         </div>
         <script>
 
@@ -565,16 +572,22 @@
                     for (rectX = 0; rectX < 20; rectX++) {
                         for (rectY = 0; rectY < 20; rectY++) {
                             var rects = mainMapSVG.append("rect")
-                                    .attr("x", rectX * 25 + borderWidth / 2)
-                                    .attr("y", rectY * 25 + borderWidth / 2)
-                                    .attr("width", 25)
-                                    .attr("height", 25)
-                                    .style("fill-opacity", 0.0)
-                                    .attr("id", "main" + "/" + rectX + "/" + rectY)
-                                    .on("click", function () {
+                                .attr("x", rectX * 25 + borderWidth / 2)
+                                .attr("y", rectY * 25 + borderWidth / 2)
+                                .attr("width", 25)
+                                .attr("height", 25)
+                                .style("fill-opacity", 0.0)
+                                .attr("id", "main" + "/" + rectX + "/" + rectY)
+                                .on("click", function () {
+                                    var myMainMap = new MainMap();
+                                    myMainMap.markGridForConfig(this.id, mainMapSVG);
+                                })
+                                .on("mouseover", function () {
+                                    if ($("#checkbox-DG").prop("checked")) {
                                         var myMainMap = new MainMap();
-                                        myMainMap.markGridForConfig(this.id, mainMapSVG);
-                                    });
+                                        myMainMap.determineDisplayGridConfig(this.id, mainMapSVG);
+                                    }
+                                })
                         }
                     }
                 }
@@ -603,12 +616,33 @@
                     } else {
                         gridSelected++;
                         checkApplyConfig();
+                        alert("display config only");
                         checkClearConfig();
                         elem.setAttribute("marked", "yes");
                         markGrid(rectID, "mark");
                     }
                 }
+                this.determineDisplayGridConfig = function (rectID, mainMapSVG) {
+                    if ($("#checkbox-DGOC").prop("checked")) {
+                        var elem = document.getElementById(rectID);
+                        if (elem.getAttribute("populated") == "yes") {
+                            this.displayGridConfig();
+                        }
+                    } else {
+                        alert("display grid details");
+                    }
+                }
+                this.displayGridConfig = function () {
+                    var elem = document.getElementById("configDetails");
+                    elem.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    elem.html(formatTime(d.date) + "<br/>" + d.close)
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px");
+                }
             }
+
             function setSectorSelectedLabel(xy) {
                 var mySelectedSector = document.getElementById("selectedSector");
                 if (xy == 'reset') {

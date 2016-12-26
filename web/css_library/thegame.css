@@ -6,6 +6,10 @@ p {
   color: black;
   font-family: Orbitron, "serif";
 }
+
+rect {
+    pointer-events: all;
+}
 th {
   font-family: Orbitron, "serif";
   font-size: 1em;
