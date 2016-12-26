@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6813a132-eb5c-4b59-a8f8-beb23f690ff1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js_library/jquery.popupoverlay.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" afterPath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.css" afterPath="$PROJECT_DIR$/web/css_library/thegame.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.less" afterPath="$PROJECT_DIR$/web/css_library/thegame.less" />
     </list>
     <ignored path="UYBGames.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,6 +44,7 @@
             <state relative-caret-position="705">
               <caret line="57" column="39" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="24" />
               <folding>
+                <element signature="e#50#107#0#PHP" expanded="false" />
                 <marker date="1477535043000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
                 <marker date="1477535043000" expanded="true" signature="2382:2477" ph="SELECT t.map... TheGameMapsBundle" />
                 <marker date="1477535043000" expanded="true" signature="3097:3208" ph="UPDATE TheGa... " />
@@ -56,10 +57,17 @@
       <file leaf-file-name="setup.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="346" column="88" lean-forward="true" selection-start-line="346" selection-start-column="88" selection-end-line="346" selection-end-column="88" />
+            <state relative-caret-position="304">
+              <caret line="146" column="13" lean-forward="true" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
               <folding>
-                <element signature="e#18493#18540#0#HTML" expanded="true" />
+                <element signature="e#9785#9817#0#HTML" expanded="true" />
+                <element signature="e#9908#9941#0#HTML" expanded="true" />
+                <element signature="e#10044#10076#0#HTML" expanded="true" />
+                <element signature="e#10184#10217#0#HTML" expanded="true" />
+                <element signature="e#10320#10352#0#HTML" expanded="true" />
+                <element signature="e#10467#10500#0#HTML" expanded="true" />
+                <element signature="e#19148#19166#0#HTML" expanded="true" />
+                <element signature="e#19548#19595#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,6 +102,14 @@
       <find>markGridForConfig</find>
       <find>properties</find>
       <find>displayGridConfig</find>
+      <find>reconstructMainMapDiv</find>
+      <find>determineDisplayGridConfig</find>
+      <find>TEST</find>
+      <find>configDetails</find>
+      <find>alert</find>
+      <find>mapLoc</find>
+      <find>config</find>
+      <find>configObj</find>
     </findStrings>
     <replaceStrings>
       <replace>resetSectorConfig</replace>
@@ -166,7 +182,6 @@
         <option value="$PROJECT_DIR$/web/css_library/thegame_setup.css" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/TheGame/MapsBundle/Controller/TilesController.php" />
         <option value="$PROJECT_DIR$/src/TheGame/MapsBundle/Controller/MapsController.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
@@ -179,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/saveconfig.html.twig" />
         <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/web/css_library/thegame.less" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
       </list>
     </option>
@@ -311,6 +327,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UYBGames" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UYBGames" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js_library" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -686,13 +720,14 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/js_library" />
+      <recent name="$PROJECT_DIR$/web/img/UYBG_img" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default" />
       <recent name="$PROJECT_DIR$/app/config" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/img/UYBG_img" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.DefaultController.php">
@@ -824,21 +859,7 @@
       <workItem from="1481735413310" duration="1210000" />
       <workItem from="1482689741807" duration="122000" />
       <workItem from="1482689879698" duration="940000" />
-      <workItem from="1482707433251" duration="3549000" />
-    </task>
-    <task id="LOCAL-00013" summary="Forms for Maps CRUD">
-      <created>1459534518700</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1459534518700</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Created js_library, css_library and UYBG_img directories in web&#10;Added deployment paths for directories&#10;Downloaded existing files from web server">
-      <created>1459535139587</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1459535139587</updated>
+      <workItem from="1482707433251" duration="12389000" />
     </task>
     <task id="LOCAL-00015" summary="Added Less.js&#10;Added comments for the JS and CSS libraries">
       <created>1459540178489</created>
@@ -1169,11 +1190,25 @@
       <option name="project" value="LOCAL" />
       <updated>1480727081503</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Added Setting panel&#10;Added start of pop-up Div for grid configuration display">
+      <created>1482724316487</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1482724316487</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Add jQuery popup overlay to js_library.">
+      <created>1482726545960</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1482726545961</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226669000" />
+    <option name="totallyTimeSpent" value="235509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -1224,8 +1259,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="Corrected Head; changed edit to Edit." />
-    <MESSAGE value="Fixed show and edit.html.twig formatting issues&#10;Added formatting to TilesType.php&#10;Updated &lt;th&gt; css to have nowrap" />
     <MESSAGE value="Fixed the Save and Delete btn's on the Maps:edit.html.twig and Tiles:edit.html.twig pages" />
     <MESSAGE value="Installed Nelmio bundle&#10;Installed FOS (Friends of Symfony) bundle&#10;Installed JMS Serializer bundle" />
     <MESSAGE value="Reset the system to SHA 5705f352eaa4dd18a1c00e3bf2f5c320d2ed5d4b" />
@@ -1249,7 +1282,9 @@
     <MESSAGE value="Added code to support activation of Apply Configuration button." />
     <MESSAGE value="Version 0.9 - Working for configuration." />
     <MESSAGE value="Version 0.91 - Added Clear and Reset functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.91 - Added Clear and Reset functions" />
+    <MESSAGE value="Added Setting panel&#10;Added start of pop-up Div for grid configuration display" />
+    <MESSAGE value="Add jQuery popup overlay to js_library." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add jQuery popup overlay to js_library." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1462,13 +1497,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/maps/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1572,6 +1600,7 @@
         <state relative-caret-position="705">
           <caret line="57" column="39" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="24" />
           <folding>
+            <element signature="e#50#107#0#PHP" expanded="false" />
             <marker date="1477535043000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
             <marker date="1477535043000" expanded="true" signature="2382:2477" ph="SELECT t.map... TheGameMapsBundle" />
             <marker date="1477535043000" expanded="true" signature="3097:3208" ph="UPDATE TheGa... " />
@@ -1587,12 +1616,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="100" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="346" column="88" lean-forward="true" selection-start-line="346" selection-start-column="88" selection-end-line="346" selection-end-column="88" />
+        <state relative-caret-position="304">
+          <caret line="146" column="13" lean-forward="true" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
           <folding>
-            <element signature="e#18493#18540#0#HTML" expanded="true" />
+            <element signature="e#9785#9817#0#HTML" expanded="true" />
+            <element signature="e#9908#9941#0#HTML" expanded="true" />
+            <element signature="e#10044#10076#0#HTML" expanded="true" />
+            <element signature="e#10184#10217#0#HTML" expanded="true" />
+            <element signature="e#10320#10352#0#HTML" expanded="true" />
+            <element signature="e#10467#10500#0#HTML" expanded="true" />
+            <element signature="e#19148#19166#0#HTML" expanded="true" />
+            <element signature="e#19548#19595#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

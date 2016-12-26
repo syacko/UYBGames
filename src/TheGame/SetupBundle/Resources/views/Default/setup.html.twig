@@ -3,7 +3,6 @@
 {% block title %}Game Setup - {% endblock %}
 
 {% block body %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
     <script>
         $(document).ajaxStart(function () {
             $('#pagelock').css('display', 'block');
@@ -138,6 +137,12 @@
             $("#resetSectorConfig").button("disable");
             $("#commitConfig").button();
             $("#commitConfig").button("disable");
+            $("#configDetails").dialog({
+                open: function (event, ui) {
+                    $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+                },
+                autoOpen: false
+            });
         });
     </script>
     <div id="pagelock">
@@ -216,7 +221,23 @@
         </div>
         {# Main Map Section #}
         <div id="mainmapsection">
-            <div id="mainMap" style="display: inline; white-space: nowrap;"></div>
+            <div id="mainMap" style="display: inline; white-space: nowrap;">
+                <div id="configDetails">
+                    <p class="UYBGFont_1em" style="margin: 2px 4px 4px 4px;">Buildable:
+                        <scan id="configDetailsBuildable" class="UYBGFont_1em" style="margin: 2px 4px 2px 28px;">
+                        </scan>
+                    </p>
+                    <p class="UYBGFont_1em" style="margin: 2px 4px 4px 4px;">Surface<br>Minerials:
+                        <scan id="configDetailsSurfaceMaterial" class="UYBGFont_1em" style="margin: 2px 4px 2px 30px;">
+                        </scan>
+                    </p>
+                    <p class="UYBGFont_1em" style="margin: 2px 4px 4px 4px;">Sub-Surface<br>Minerials:
+                        <scan id="configDetailsSubSurfaceMaterial" class="UYBGFont_1em"
+                              style="margin: 2px 4px 2px 30px;">
+                        </scan>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     {# Map Configuration Area #}
@@ -356,12 +377,7 @@
                     hendrerit hendrerit.</p>
             </div>
         </div>
-        <div id="configDetails">
-            ...popup content...
-            <button class="configDetails_close">Close</button>
-        </div>
         <script>
-
             var miniWidth = 375, miniHeight = 175, borderWidth = 10, displayBorderColor = "#50a8d5", gridWidth = 25, turquoise = "#33ffff";
             var sectorSelected = false, propertiesSelected = 0, gridSelected = 0;
             var myMiniMap = new MiniMap();
@@ -489,11 +505,11 @@
 
                             //Load text on display snow
                             mainMapSVG.append("text").text("Click on a the mini map to zoom in on a sector.")
-                                    .attr("x", "25")
-                                    .attr("y", "25")
-                                    .attr("font-family", "Orbitron")
-                                    .attr("font-size", "1em")
-                                    .attr("fill", "black");
+                                .attr("x", "25")
+                                .attr("y", "25")
+                                .attr("font-family", "Orbitron")
+                                .attr("font-size", "1em")
+                                .attr("fill", "black");
                             break;
                         case "main":
                             var xy = rectID.split("/");
@@ -527,11 +543,11 @@
 
                             //Load text on display snow
                             mainMapSVG.append("text").text("Click on a the mini map to zoom in on a sector.")
-                                    .attr("x", "25")
-                                    .attr("y", "25")
-                                    .attr("font-family", "Orbitron")
-                                    .attr("font-size", "1em")
-                                    .attr("fill", "black");
+                                .attr("x", "25")
+                                .attr("y", "25")
+                                .attr("font-family", "Orbitron")
+                                .attr("font-size", "1em")
+                                .attr("fill", "black");
                             break;
                         default:
                             alert("MainMap has been called with invalid action. [" + action + "]")
@@ -541,30 +557,30 @@
                 this.buildMainSVGBorder = function () {
                     //Create mainMapSVG
                     var mainMapSVG = d3.select("div#mainMap").append("svg")
-                            .attr("width", 500 + borderWidth)
-                            .attr("height", 500 + borderWidth)
-                            .attr("id", "mainMapSVG");
+                        .attr("width", 500 + borderWidth)
+                        .attr("height", 500 + borderWidth)
+                        .attr("id", "mainMapSVG");
                     //Create MainMapBorder
                     mainMapSVG.append("rect")
-                            .attr("x", 0)
-                            .attr("y", 0)
-                            .attr("rx", 15)
-                            .attr("ry", 15)
-                            .attr("width", 500 + borderWidth)
-                            .attr("height", 500 + borderWidth)
-                            .attr("fill", "white")
-                            .attr("stroke", displayBorderColor)
-                            .attr("stroke-width", borderWidth);
+                        .attr("x", 0)
+                        .attr("y", 0)
+                        .attr("rx", 15)
+                        .attr("ry", 15)
+                        .attr("width", 500 + borderWidth)
+                        .attr("height", 500 + borderWidth)
+                        .attr("fill", "white")
+                        .attr("stroke", displayBorderColor)
+                        .attr("stroke-width", borderWidth);
                     return mainMapSVG;
                 }
 
                 this.buildMainImage = function (mainMapSVG, fileName) {
                     mainMapSVG.append("image")
-                            .attr("xlink:href", fileName)
-                            .attr("x", borderWidth / 2)
-                            .attr("y", borderWidth / 2)
-                            .attr("width", 500)
-                            .attr("height", 500);
+                        .attr("xlink:href", fileName)
+                        .attr("x", borderWidth / 2)
+                        .attr("y", borderWidth / 2)
+                        .attr("width", 500)
+                        .attr("height", 500);
                 }
 
                 this.buildMainGrid = function (mainMapSVG) {
@@ -587,6 +603,9 @@
                                         var myMainMap = new MainMap();
                                         myMainMap.determineDisplayGridConfig(this.id, mainMapSVG);
                                     }
+                                })
+                                .on("mouseout", function () {
+                                    $("#configDetails").dialog("close");
                                 })
                         }
                     }
@@ -616,7 +635,6 @@
                     } else {
                         gridSelected++;
                         checkApplyConfig();
-                        alert("display config only");
                         checkClearConfig();
                         elem.setAttribute("marked", "yes");
                         markGrid(rectID, "mark");
@@ -626,20 +644,25 @@
                     if ($("#checkbox-DGOC").prop("checked")) {
                         var elem = document.getElementById(rectID);
                         if (elem.getAttribute("populated") == "yes") {
-                            this.displayGridConfig();
+                            this.displayGridConfig(rectID, mainMapSVG);
                         }
                     } else {
-                        alert("display grid details");
+                        this.displayGridConfig(rectID, mainMapSVG);
                     }
                 }
-                this.displayGridConfig = function () {
-                    var elem = document.getElementById("configDetails");
-                    elem.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    elem.html(formatTime(d.date) + "<br/>" + d.close)
-                        .style("left", (d3.event.pageX) + "px")
-                        .style("top", (d3.event.pageY - 28) + "px");
+                this.displayGridConfig = function (rectID, mainMapSVG) {
+                    var elem = document.getElementById(rectID);
+                    $("#configDetails").dialog("option", "position", {my: "left top", at: "left bottom", of: elem});
+                    if (elem.getAttribute("buildable") == "n") {
+                        $("#configDetailsBuildable").text("No");
+                    } else {
+                        $("#configDetailsBuildable").text("Yes");
+                    }
+                    $("#configDetailsSurfaceMaterial").text(elem.getAttribute("smins"));
+                    $("#configDetailsSubSurfaceMaterial").text(elem.getAttribute("subsmins"));
+                    var myRectIDParts = rectID.split("/");
+                    $("#configDetails").dialog("option", "title", "Grid Col: " + myRectIDParts[1] + " Row: " + myRectIDParts[2]);
+                    $("#configDetails").dialog("open");
                 }
             }
 
@@ -825,13 +848,17 @@
                 var mapLocations = new Array(), ptr = 0;
                 for (r = 0; r < 20; r++) {
                     for (c = 0; c < 20; c++) {
-                        if (document.getElementById("main/" + c + "/" + r).getAttribute("populated")) {
-                            var myMapLoc = new mapLoc(r, c, configObj);
-                            mapLocations[ptr++] = myMapLoc;
-                            var myMapLoc = null;
-                        }
+//
+//                        Needs to be changed to read attributes
+//
+//                        if (document.getElementById("main/" + c + "/" + r).getAttribute("populated")) {
+//                            var myMapLoc = new mapLoc(r, c, configObj);
+//                            mapLocations[ptr++] = myMapLoc;
+//                            var myMapLoc = null;
+//                        }
                     }
                 }
+                alert("Changes Needed Here!!!!!!");
                 var tileData = new Object();
                 formatColRow(tileData);
                 tileData['configdata'] = mapLocations;
