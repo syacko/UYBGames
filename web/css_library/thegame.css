@@ -6,7 +6,6 @@ p {
   color: black;
   font-family: Orbitron, "serif";
 }
-
 rect {
     pointer-events: all;
 }
@@ -158,6 +157,17 @@ li.ui-menu-item:before {
   font-family: Orbitron, "serif";
   font-size: 0.5em;
 }
+
+.UYBGFont_060em {
+    font-family: Orbitron, "serif";
+    font-size: 0.6em;
+}
+
+.UYBGFont_060em_AlignCenter {
+    font-family: Orbitron, "serif";
+    font-size: 0.6em;
+    text-align: center;
+}
 .UYBGFont_075em {
   font-family: Orbitron, "serif";
   font-size: 0.75em;
@@ -289,8 +299,6 @@ li.ui-menu-item:before {
 .divTableHead {
   border: 0px solid #999999;
   display: table-cell;
-  padding: 3px 10px;
-  vertical-align: bottom;
 }
 .divTableHeading {
   display: table-header-group;

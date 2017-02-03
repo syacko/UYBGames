@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6813a132-eb5c-4b59-a8f8-beb23f690ff1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js_library/jquery.popupoverlay.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css_library/thegame_fonts.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" afterPath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.css" afterPath="$PROJECT_DIR$/web/css_library/thegame.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.less" afterPath="$PROJECT_DIR$/web/css_library/thegame.less" />
     </list>
     <ignored path="UYBGames.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,18 +58,46 @@
       <file leaf-file-name="setup.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="146" column="13" lean-forward="true" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
+            <state relative-caret-position="10995">
+              <caret line="848" column="66" lean-forward="true" selection-start-line="848" selection-start-column="66" selection-end-line="848" selection-end-column="66" />
               <folding>
-                <element signature="e#9785#9817#0#HTML" expanded="true" />
-                <element signature="e#9908#9941#0#HTML" expanded="true" />
-                <element signature="e#10044#10076#0#HTML" expanded="true" />
-                <element signature="e#10184#10217#0#HTML" expanded="true" />
-                <element signature="e#10320#10352#0#HTML" expanded="true" />
-                <element signature="e#10467#10500#0#HTML" expanded="true" />
-                <element signature="e#19148#19166#0#HTML" expanded="true" />
-                <element signature="e#19548#19595#0#HTML" expanded="true" />
+                <element signature="e#9626#9660#0#HTML" expanded="true" />
+                <element signature="e#9868#9894#0#HTML" expanded="true" />
+                <element signature="e#10099#10125#0#HTML" expanded="true" />
+                <element signature="e#10288#10320#0#HTML" expanded="true" />
+                <element signature="e#10356#10390#0#HTML" expanded="true" />
+                <element signature="e#10513#10541#0#HTML" expanded="true" />
+                <element signature="e#10676#10723#0#HTML" expanded="true" />
+                <element signature="e#11099#11142#0#HTML" expanded="true" />
+                <element signature="e#11054#20267#0#HTML" expanded="false" />
+                <element signature="e#11770#11816#0#HTML" expanded="true" />
+                <element signature="e#11954#11981#0#HTML" expanded="true" />
+                <element signature="e#12245#12272#0#HTML" expanded="true" />
+                <element signature="e#12570#12595#0#HTML" expanded="true" />
+                <element signature="e#13620#13647#0#HTML" expanded="true" />
+                <element signature="e#15922#15949#0#HTML" expanded="true" />
+                <element signature="e#16241#16266#0#HTML" expanded="true" />
+                <element signature="e#16888#16915#0#HTML" expanded="true" />
+                <element signature="e#17149#17176#0#HTML" expanded="true" />
+                <element signature="e#17415#17440#0#HTML" expanded="true" />
+                <element signature="e#17981#18007#0#HTML" expanded="true" />
+                <element signature="e#20300#20324#0#HTML" expanded="true" />
+                <element signature="e#20388#20420#0#HTML" expanded="true" />
+                <element signature="e#20480#20512#0#HTML" expanded="true" />
+                <element signature="e#20597#20629#0#HTML" expanded="true" />
+                <element signature="e#20845#20877#0#HTML" expanded="true" />
+                <element signature="e#21100#21132#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thegame.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css_library/thegame.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2676">
+              <caret line="364" column="24" lean-forward="false" selection-start-line="364" selection-start-column="24" selection-end-line="364" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,31 +114,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>save</find>
-      <find>populate</find>
-      <find>propertiesSelected</find>
-      <find>commitConfig</find>
-      <find>checkApplyConfig</find>
       <find>addDataToGrid</find>
-      <find>clear</find>
-      <find>clearConfig</find>
-      <find>checkClearConfig</find>
-      <find>sectorSelected</find>
-      <find>resetConfig</find>
-      <find>resetSectorConfig</find>
-      <find>hover</find>
-      <find>rect</find>
-      <find>markGridForConfig</find>
-      <find>properties</find>
-      <find>displayGridConfig</find>
-      <find>reconstructMainMapDiv</find>
-      <find>determineDisplayGridConfig</find>
-      <find>TEST</find>
-      <find>configDetails</find>
-      <find>alert</find>
-      <find>mapLoc</find>
+      <find>readGridData</find>
+      <find>myConfigObj</find>
+      <find>ConfigObj</find>
       <find>config</find>
+      <find>cellconfig</find>
+      <find>config</find>
+      <find>myMapLoc</find>
+      <find>MapLoc</find>
+      <find>new</find>
+      <find>tileData</find>
+      <find>MainMap</find>
+      <find>yello</find>
+      <find>Sector Selected</find>
+      <find>fill-opacity</find>
+      <find>subtitleconf</find>
+      <find>subtileconf</find>
+      <find>divTableCell</find>
+      <find>quick</find>
+      <find>configed</find>
+      <find>checkbox-DGOC</find>
+      <find>configDetails</find>
+      <find>rectID</find>
+      <find>configDetailsBuildable</find>
+      <find>JSON.parse</find>
       <find>configObj</find>
+      <find>mapLoc</find>
+      <find>button</find>
+      <find>htmlEntities</find>
+      <find>alert</find>
     </findStrings>
     <replaceStrings>
       <replace>resetSectorConfig</replace>
@@ -193,8 +227,8 @@
         <option value="$PROJECT_DIR$/web/img/pleasewait.svg" />
         <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/saveconfig.html.twig" />
         <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/web/css_library/thegame.less" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/web/css_library/thegame.less" />
         <option value="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
       </list>
     </option>
@@ -303,9 +337,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UYBGames" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.jetbrains.php.config.library.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="UYBGames" />
@@ -347,6 +390,10 @@
               <option name="myItemId" value="js_library" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery-ui-custom" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -383,6 +430,10 @@
               <option name="myItemId" value="css_library" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thegame.less" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -400,10 +451,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="css_library" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thegame.less" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -685,6 +732,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -859,14 +907,14 @@
       <workItem from="1481735413310" duration="1210000" />
       <workItem from="1482689741807" duration="122000" />
       <workItem from="1482689879698" duration="940000" />
-      <workItem from="1482707433251" duration="12389000" />
-    </task>
-    <task id="LOCAL-00015" summary="Added Less.js&#10;Added comments for the JS and CSS libraries">
-      <created>1459540178489</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1459540178489</updated>
+      <workItem from="1482707433251" duration="12456000" />
+      <workItem from="1483041033659" duration="13000" />
+      <workItem from="1483041054077" duration="2120000" />
+      <workItem from="1483380827463" duration="156000" />
+      <workItem from="1484933239756" duration="234000" />
+      <workItem from="1485841179349" duration="25000" />
+      <workItem from="1485841212689" duration="187000" />
+      <workItem from="1486062278825" duration="18926000" />
     </task>
     <task id="LOCAL-00016" summary="Added Lessjs to header&#10;Removed thegame_font.css by consolidating all css into thegame.less">
       <created>1459541301011</created>
@@ -1204,38 +1252,45 @@
       <option name="project" value="LOCAL" />
       <updated>1482726545961</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Removed jQuery popup overlay to js_library.&#10;Added Dialog for grid config details">
+      <created>1482733973463</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1482733973463</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235509000" />
+    <option name="totallyTimeSpent" value="257237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33089134" sideWeight="0.4904988" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36019537" sideWeight="0.4904988" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265086" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969475" sideWeight="0.49524942" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33405173" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.27077562" sideWeight="0.50950116" order="2" side_tool="true" content_ui="tabs" x="722" y="349" width="391" height="422" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39870688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74316293" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286638" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39870688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1259,7 +1314,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="Fixed the Save and Delete btn's on the Maps:edit.html.twig and Tiles:edit.html.twig pages" />
     <MESSAGE value="Installed Nelmio bundle&#10;Installed FOS (Friends of Symfony) bundle&#10;Installed JMS Serializer bundle" />
     <MESSAGE value="Reset the system to SHA 5705f352eaa4dd18a1c00e3bf2f5c320d2ed5d4b" />
     <MESSAGE value="Fixed DefaultController to point to setup.html.twig" />
@@ -1284,7 +1338,8 @@
     <MESSAGE value="Version 0.91 - Added Clear and Reset functions" />
     <MESSAGE value="Added Setting panel&#10;Added start of pop-up Div for grid configuration display" />
     <MESSAGE value="Add jQuery popup overlay to js_library." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add jQuery popup overlay to js_library." />
+    <MESSAGE value="Removed jQuery popup overlay to js_library.&#10;Added Dialog for grid config details" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed jQuery popup overlay to js_library.&#10;Added Dialog for grid config details" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1574,13 +1629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css_library/thegame_fonts.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css_library/thegame.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-240">
@@ -1609,10 +1657,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/css_library/thegame_fonts.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/css_library/thegame.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="136" column="1" lean-forward="true" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
+        <state relative-caret-position="2676">
+          <caret line="364" column="24" lean-forward="false" selection-start-line="364" selection-start-column="24" selection-end-line="364" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1626,17 +1683,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="146" column="13" lean-forward="true" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
+        <state relative-caret-position="10995">
+          <caret line="848" column="66" lean-forward="true" selection-start-line="848" selection-start-column="66" selection-end-line="848" selection-end-column="66" />
           <folding>
-            <element signature="e#9785#9817#0#HTML" expanded="true" />
-            <element signature="e#9908#9941#0#HTML" expanded="true" />
-            <element signature="e#10044#10076#0#HTML" expanded="true" />
-            <element signature="e#10184#10217#0#HTML" expanded="true" />
-            <element signature="e#10320#10352#0#HTML" expanded="true" />
-            <element signature="e#10467#10500#0#HTML" expanded="true" />
-            <element signature="e#19148#19166#0#HTML" expanded="true" />
-            <element signature="e#19548#19595#0#HTML" expanded="true" />
+            <element signature="e#9626#9660#0#HTML" expanded="true" />
+            <element signature="e#9868#9894#0#HTML" expanded="true" />
+            <element signature="e#10099#10125#0#HTML" expanded="true" />
+            <element signature="e#10288#10320#0#HTML" expanded="true" />
+            <element signature="e#10356#10390#0#HTML" expanded="true" />
+            <element signature="e#10513#10541#0#HTML" expanded="true" />
+            <element signature="e#10676#10723#0#HTML" expanded="true" />
+            <element signature="e#11099#11142#0#HTML" expanded="true" />
+            <element signature="e#11054#20267#0#HTML" expanded="false" />
+            <element signature="e#11770#11816#0#HTML" expanded="true" />
+            <element signature="e#11954#11981#0#HTML" expanded="true" />
+            <element signature="e#12245#12272#0#HTML" expanded="true" />
+            <element signature="e#12570#12595#0#HTML" expanded="true" />
+            <element signature="e#13620#13647#0#HTML" expanded="true" />
+            <element signature="e#15922#15949#0#HTML" expanded="true" />
+            <element signature="e#16241#16266#0#HTML" expanded="true" />
+            <element signature="e#16888#16915#0#HTML" expanded="true" />
+            <element signature="e#17149#17176#0#HTML" expanded="true" />
+            <element signature="e#17415#17440#0#HTML" expanded="true" />
+            <element signature="e#17981#18007#0#HTML" expanded="true" />
+            <element signature="e#20300#20324#0#HTML" expanded="true" />
+            <element signature="e#20388#20420#0#HTML" expanded="true" />
+            <element signature="e#20480#20512#0#HTML" expanded="true" />
+            <element signature="e#20597#20629#0#HTML" expanded="true" />
+            <element signature="e#20845#20877#0#HTML" expanded="true" />
+            <element signature="e#21100#21132#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
