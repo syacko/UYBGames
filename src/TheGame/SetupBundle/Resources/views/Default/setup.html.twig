@@ -236,14 +236,14 @@
             <p class="UYBGFont_080em" style="margin: 2em 0em 0em 1em;">Settings</p>
             <fieldset style="border: none; margin: 0px;">
                 <input type="checkbox" name="checkbox-DG" id="checkbox-DG">
-                <span class="UYBGFont_060em" style="margin-bottom: 15px;">Display Grid Details</span><br>
+                <span class="UYBGFont_060em" style="margin-bottom: 15px;">Display Cell Details</span><br>
                 <input type="checkbox" name="checkbox-DGOC" id="checkbox-DGOC"
                        style="margin-left: 20px; margin-bottom: 10px;"
                        onclick="$('#checkbox-DG').prop('checked', true);">
-                <span class="UYBGFont_060em" style="margin-bottom: 15px;">Only Config'ed Grids</span><br>
+                <span class="UYBGFont_060em" style="margin-bottom: 15px;">Only Config'ed Cell</span><br>
             </fieldset>
         </div>
-        <div class="UYBGFont_090em_AlignCenter" style="margin-top: 2px;">Sub-Tile Configuration</div>
+        <div class="UYBGFont_090em" style="margin-top: 2px; margin-left: 42%">Cell Configuration</div>
         <div id="subtileconf" class="UYBGFont_070em" style="float: left;height: 91%;width: 55%;">
             <ul>
                 <li class="removeIcon"><a href="#tabs-1" class="UYBGFont_1em_AlignCenter">Properties</a></li>
@@ -443,7 +443,7 @@
                             this.buildMiniMapGrid(miniMapSVG, miniWidth / gridWidth, miniHeight / gridWidth, mapName);
                             break;
                         default:
-                            alert("MiniMap has been called with invalid action. [" + action + "]")
+                            alert("MiniMap has been called with invalid action. [" + action + "]");
                     }
                 }
 
@@ -568,7 +568,7 @@
                                 .attr("fill", "black");
                             break;
                         default:
-                            alert("MainMap has been called with invalid action. [" + action + "]")
+                            alert("MainMap has been called with invalid action. [" + action + "]");
                     }
                 }
 
