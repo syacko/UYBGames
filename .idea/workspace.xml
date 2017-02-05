@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6813a132-eb5c-4b59-a8f8-beb23f690ff1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css_library/thegame_fonts.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/UYBG_img/MapsMaster-001-11-6.jpg" afterPath="$PROJECT_DIR$/web/img/UYBG_img/MapsMaster-001-11-6.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" afterPath="$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.css" afterPath="$PROJECT_DIR$/web/css_library/thegame.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css_library/thegame.less" afterPath="$PROJECT_DIR$/web/css_library/thegame.less" />
     </list>
     <ignored path="UYBGames.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,27 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="57" column="39" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="24" />
-              <folding>
-                <element signature="e#50#107#0#PHP" expanded="false" />
-                <marker date="1477535043000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
-                <marker date="1477535043000" expanded="true" signature="2382:2477" ph="SELECT t.map... TheGameMapsBundle" />
-                <marker date="1477535043000" expanded="true" signature="3097:3208" ph="UPDATE TheGa... " />
-                <marker date="1477535043000" expanded="true" signature="4705:4803" ph="SELECT t.til... TheGameMapsBundle" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="setup.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10995">
-              <caret line="848" column="66" lean-forward="true" selection-start-line="848" selection-start-column="66" selection-end-line="848" selection-end-column="66" />
+            <state relative-caret-position="3390">
+              <caret line="357" column="18" lean-forward="true" selection-start-line="357" selection-start-column="18" selection-end-line="357" selection-end-column="18" />
               <folding>
                 <element signature="e#9626#9660#0#HTML" expanded="true" />
                 <element signature="e#9868#9894#0#HTML" expanded="true" />
@@ -69,35 +51,31 @@
                 <element signature="e#10513#10541#0#HTML" expanded="true" />
                 <element signature="e#10676#10723#0#HTML" expanded="true" />
                 <element signature="e#11099#11142#0#HTML" expanded="true" />
-                <element signature="e#11054#20267#0#HTML" expanded="false" />
-                <element signature="e#11770#11816#0#HTML" expanded="true" />
-                <element signature="e#11954#11981#0#HTML" expanded="true" />
-                <element signature="e#12245#12272#0#HTML" expanded="true" />
-                <element signature="e#12570#12595#0#HTML" expanded="true" />
-                <element signature="e#13620#13647#0#HTML" expanded="true" />
-                <element signature="e#15922#15949#0#HTML" expanded="true" />
-                <element signature="e#16241#16266#0#HTML" expanded="true" />
-                <element signature="e#16888#16915#0#HTML" expanded="true" />
-                <element signature="e#17149#17176#0#HTML" expanded="true" />
-                <element signature="e#17415#17440#0#HTML" expanded="true" />
-                <element signature="e#17981#18007#0#HTML" expanded="true" />
-                <element signature="e#20300#20324#0#HTML" expanded="true" />
-                <element signature="e#20388#20420#0#HTML" expanded="true" />
-                <element signature="e#20480#20512#0#HTML" expanded="true" />
-                <element signature="e#20597#20629#0#HTML" expanded="true" />
-                <element signature="e#20845#20877#0#HTML" expanded="true" />
-                <element signature="e#21100#21132#0#HTML" expanded="true" />
+                <element signature="e#11536#11562#0#HTML" expanded="true" />
+                <element signature="e#11797#11843#0#HTML" expanded="true" />
+                <element signature="e#11938#11965#0#HTML" expanded="true" />
+                <element signature="e#12193#12220#0#HTML" expanded="true" />
+                <element signature="e#12421#12446#0#HTML" expanded="true" />
+                <element signature="e#13463#13490#0#HTML" expanded="true" />
+                <element signature="e#15759#15786#0#HTML" expanded="true" />
+                <element signature="e#15981#16006#0#HTML" expanded="true" />
+                <element signature="e#16605#16632#0#HTML" expanded="true" />
+                <element signature="e#16831#16858#0#HTML" expanded="true" />
+                <element signature="e#17104#17129#0#HTML" expanded="true" />
+                <element signature="e#17743#17769#0#HTML" expanded="true" />
+                <element signature="e#20062#20086#0#HTML" expanded="true" />
+                <element signature="e#20124#20156#0#HTML" expanded="true" />
+                <element signature="e#20229#20261#0#HTML" expanded="true" />
+                <element signature="e#20346#20378#0#HTML" expanded="true" />
+                <element signature="e#20463#20495#0#HTML" expanded="true" />
+                <element signature="e#20711#20743#0#HTML" expanded="true" />
+                <element signature="e#20966#20998#0#HTML" expanded="true" />
+                <element signature="e#21211#21243#0#HTML" expanded="true" />
+                <element signature="e#21324#21356#0#HTML" expanded="true" />
+                <element signature="e#21444#21476#0#HTML" expanded="true" />
+                <element signature="e#21557#21589#0#HTML" expanded="true" />
+                <element signature="e#21666#21698#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="thegame.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css_library/thegame.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2676">
-              <caret line="364" column="24" lean-forward="false" selection-start-line="364" selection-start-column="24" selection-end-line="364" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -130,7 +108,6 @@
       <find>Sector Selected</find>
       <find>fill-opacity</find>
       <find>subtitleconf</find>
-      <find>subtileconf</find>
       <find>divTableCell</find>
       <find>quick</find>
       <find>configed</find>
@@ -144,6 +121,7 @@
       <find>button</find>
       <find>htmlEntities</find>
       <find>alert</find>
+      <find>subtileconf</find>
     </findStrings>
     <replaceStrings>
       <replace>resetSectorConfig</replace>
@@ -914,14 +892,7 @@
       <workItem from="1484933239756" duration="234000" />
       <workItem from="1485841179349" duration="25000" />
       <workItem from="1485841212689" duration="187000" />
-      <workItem from="1486062278825" duration="18926000" />
-    </task>
-    <task id="LOCAL-00016" summary="Added Lessjs to header&#10;Removed thegame_font.css by consolidating all css into thegame.less">
-      <created>1459541301011</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1459541301011</updated>
+      <workItem from="1486062278825" duration="24299000" />
     </task>
     <task id="LOCAL-00017" summary="Create thegame.less which creates thegame.css">
       <created>1459541417505</created>
@@ -1259,11 +1230,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482733973463</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Reformat the configuration section of the page&#10;Fixed the JSON format for uploading and downloading to/from the database.&#10;Replaced the dialog for the configuration and replace it with a display in the configuration section.">
+      <created>1486100036816</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1486100036817</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257237000" />
+    <option name="totallyTimeSpent" value="262610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -1314,7 +1292,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="Installed Nelmio bundle&#10;Installed FOS (Friends of Symfony) bundle&#10;Installed JMS Serializer bundle" />
     <MESSAGE value="Reset the system to SHA 5705f352eaa4dd18a1c00e3bf2f5c320d2ed5d4b" />
     <MESSAGE value="Fixed DefaultController to point to setup.html.twig" />
     <MESSAGE value="Changed page layout and created thegame_setup.css file" />
@@ -1339,7 +1316,8 @@
     <MESSAGE value="Added Setting panel&#10;Added start of pop-up Div for grid configuration display" />
     <MESSAGE value="Add jQuery popup overlay to js_library." />
     <MESSAGE value="Removed jQuery popup overlay to js_library.&#10;Added Dialog for grid config details" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed jQuery popup overlay to js_library.&#10;Added Dialog for grid config details" />
+    <MESSAGE value="Reformat the configuration section of the page&#10;Fixed the JSON format for uploading and downloading to/from the database.&#10;Replaced the dialog for the configuration and replace it with a display in the configuration section." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformat the configuration section of the page&#10;Fixed the JSON format for uploading and downloading to/from the database.&#10;Replaced the dialog for the configuration and replace it with a display in the configuration section." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1347,29 +1325,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/symfony_requirements">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig.test" />
-    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig.test" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1643,20 +1598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="57" column="39" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#50#107#0#PHP" expanded="false" />
-            <marker date="1477535043000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
-            <marker date="1477535043000" expanded="true" signature="2382:2477" ph="SELECT t.map... TheGameMapsBundle" />
-            <marker date="1477535043000" expanded="true" signature="3097:3208" ph="UPDATE TheGa... " />
-            <marker date="1477535043000" expanded="true" signature="4705:4803" ph="SELECT t.til... TheGameMapsBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css_library/thegame_fonts.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1681,10 +1622,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/UYBG_img/MapsMaster-001-14-5.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/UYBG_img/MapsMaster-001-14-6.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/UYBG_img/MapsMaster-001-14-4.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/UYBG_img/MapsMaster-001-14-3.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/UYBG_img/MapsMaster-001-14-2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="57" column="39" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="24" />
+          <folding>
+            <marker date="1477535043000" expanded="true" signature="963:1053" ph="SELECT m.map... TheGameMapsBundle" />
+            <marker date="1477535043000" expanded="true" signature="2382:2477" ph="SELECT t.map... TheGameMapsBundle" />
+            <marker date="1477535043000" expanded="true" signature="3097:3208" ph="UPDATE TheGa... " />
+            <marker date="1477535043000" expanded="true" signature="4705:4803" ph="SELECT t.til... TheGameMapsBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TheGame/SetupBundle/Resources/views/Default/setup.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10995">
-          <caret line="848" column="66" lean-forward="true" selection-start-line="848" selection-start-column="66" selection-end-line="848" selection-end-column="66" />
+        <state relative-caret-position="3390">
+          <caret line="357" column="18" lean-forward="true" selection-start-line="357" selection-start-column="18" selection-end-line="357" selection-end-column="18" />
           <folding>
             <element signature="e#9626#9660#0#HTML" expanded="true" />
             <element signature="e#9868#9894#0#HTML" expanded="true" />
@@ -1694,24 +1673,30 @@
             <element signature="e#10513#10541#0#HTML" expanded="true" />
             <element signature="e#10676#10723#0#HTML" expanded="true" />
             <element signature="e#11099#11142#0#HTML" expanded="true" />
-            <element signature="e#11054#20267#0#HTML" expanded="false" />
-            <element signature="e#11770#11816#0#HTML" expanded="true" />
-            <element signature="e#11954#11981#0#HTML" expanded="true" />
-            <element signature="e#12245#12272#0#HTML" expanded="true" />
-            <element signature="e#12570#12595#0#HTML" expanded="true" />
-            <element signature="e#13620#13647#0#HTML" expanded="true" />
-            <element signature="e#15922#15949#0#HTML" expanded="true" />
-            <element signature="e#16241#16266#0#HTML" expanded="true" />
-            <element signature="e#16888#16915#0#HTML" expanded="true" />
-            <element signature="e#17149#17176#0#HTML" expanded="true" />
-            <element signature="e#17415#17440#0#HTML" expanded="true" />
-            <element signature="e#17981#18007#0#HTML" expanded="true" />
-            <element signature="e#20300#20324#0#HTML" expanded="true" />
-            <element signature="e#20388#20420#0#HTML" expanded="true" />
-            <element signature="e#20480#20512#0#HTML" expanded="true" />
-            <element signature="e#20597#20629#0#HTML" expanded="true" />
-            <element signature="e#20845#20877#0#HTML" expanded="true" />
-            <element signature="e#21100#21132#0#HTML" expanded="true" />
+            <element signature="e#11536#11562#0#HTML" expanded="true" />
+            <element signature="e#11797#11843#0#HTML" expanded="true" />
+            <element signature="e#11938#11965#0#HTML" expanded="true" />
+            <element signature="e#12193#12220#0#HTML" expanded="true" />
+            <element signature="e#12421#12446#0#HTML" expanded="true" />
+            <element signature="e#13463#13490#0#HTML" expanded="true" />
+            <element signature="e#15759#15786#0#HTML" expanded="true" />
+            <element signature="e#15981#16006#0#HTML" expanded="true" />
+            <element signature="e#16605#16632#0#HTML" expanded="true" />
+            <element signature="e#16831#16858#0#HTML" expanded="true" />
+            <element signature="e#17104#17129#0#HTML" expanded="true" />
+            <element signature="e#17743#17769#0#HTML" expanded="true" />
+            <element signature="e#20062#20086#0#HTML" expanded="true" />
+            <element signature="e#20124#20156#0#HTML" expanded="true" />
+            <element signature="e#20229#20261#0#HTML" expanded="true" />
+            <element signature="e#20346#20378#0#HTML" expanded="true" />
+            <element signature="e#20463#20495#0#HTML" expanded="true" />
+            <element signature="e#20711#20743#0#HTML" expanded="true" />
+            <element signature="e#20966#20998#0#HTML" expanded="true" />
+            <element signature="e#21211#21243#0#HTML" expanded="true" />
+            <element signature="e#21324#21356#0#HTML" expanded="true" />
+            <element signature="e#21444#21476#0#HTML" expanded="true" />
+            <element signature="e#21557#21589#0#HTML" expanded="true" />
+            <element signature="e#21666#21698#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
